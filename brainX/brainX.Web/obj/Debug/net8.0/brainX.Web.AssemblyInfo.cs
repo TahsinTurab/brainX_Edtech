@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("brainX.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83271a0af8507d17e96924d4a4895cb2c8be4cbf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("brainX.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("brainX.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

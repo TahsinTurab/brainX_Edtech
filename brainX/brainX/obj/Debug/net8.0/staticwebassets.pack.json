@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\737f2a7c-8685-4f63-801a-0bc632ce579b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\737f2a7c-8685-4f63-801a-0bc632ce579b.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.brainX.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
