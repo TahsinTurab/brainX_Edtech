@@ -27,6 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Instructor\Data\" />
+    <Folder Include="Areas\Instructor\Models\" />
     <Folder Include="Areas\Student\Controllers\" />
     <Folder Include="wwwroot\uploads\dp\" />
     <Folder Include="wwwroot\uploads\ques\" />
