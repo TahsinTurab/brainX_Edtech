@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brainX.Web", "brainX.Web\brainX.Web.csproj", "{5B932DF6-0FFB-459F-AA04-FD549385FA6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "brainX.Infrastructure", "brainX.Infrastructure\brainX.Infrastructure.csproj", "{73E7D630-DC52-4B80-8431-E8C362E03196}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brainX.Infrastructure", "brainX.Infrastructure\brainX.Infrastructure.csproj", "{73E7D630-DC52-4B80-8431-E8C362E03196}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brainX", "brainX\brainX.csproj", "{4937E977-FE9F-4C0F-9643-B6CD459674EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "brainX", "brainX\brainX.csproj", "{4937E977-FE9F-4C0F-9643-B6CD459674EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5B932DF6-0FFB-459F-AA04-FD549385FA6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B932DF6-0FFB-459F-AA04-FD549385FA6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B932DF6-0FFB-459F-AA04-FD549385FA6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B932DF6-0FFB-459F-AA04-FD549385FA6A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73E7D630-DC52-4B80-8431-E8C362E03196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{73E7D630-DC52-4B80-8431-E8C362E03196}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73E7D630-DC52-4B80-8431-E8C362E03196}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GRUw7fsKOvm4/pyHD291H9nWfBXfx6ht3l820Yd7Njk=",
+  "Hash": "Yb9Vuk5YrdzQuTljjb8XxVaKH6E3hxtGRd8BtJ8mUXY=",
   "Source": "brainX",
   "BasePath": "_content/brainX",
   "Mode": "Default",
@@ -43791,6 +43791,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\737f2a7c-8685-4f63-801a-0bc632ce579b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\b0be7423-c28a-47aa-9adf-1cd4183ea0ca.jpg",
+      "SourceId": "brainX",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\",
+      "BasePath": "_content/brainX",
+      "RelativePath": "uploads/b0be7423-c28a-47aa-9adf-1cd4183ea0ca.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\b0be7423-c28a-47aa-9adf-1cd4183ea0ca.jpg"
     }
   ]
 }

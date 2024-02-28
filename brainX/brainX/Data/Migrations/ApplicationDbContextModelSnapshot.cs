@@ -235,16 +235,16 @@ namespace brainX.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<double>("CurrentBalance")
+                    b.Property<double?>("CurrentBalance")
                         .HasColumnType("float");
 
                     b.Property<Guid>("InstructorId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<double>("TotalRevenue")
+                    b.Property<double?>("TotalRevenue")
                         .HasColumnType("float");
 
-                    b.Property<double>("Withdraw")
+                    b.Property<double?>("Withdraw")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -330,28 +330,7 @@ namespace brainX.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Qualifications")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")

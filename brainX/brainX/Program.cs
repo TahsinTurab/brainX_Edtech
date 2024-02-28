@@ -1,4 +1,6 @@
 using brainX.Data;
+using brainX.Infrastructure.Repositories.Interface;
+using brainX.Infrastructure.Repositories.Implementation;
 using brainX.Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +21,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddScoped<IFileService,FileService>();
+builder.Services.AddScoped<IInstructorRepository, InstructorRepository>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
