@@ -6,22 +6,54 @@
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
-    </li>
-    <li class="nav-item">
-        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
-}
+    @if (User.IsInRole("Instructor"))
+    {
+        <div class="btn-group">
+            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Hello @User.Identity?.Name!</span>
+            </button>
+
+            <div class="dropdown-menu">
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="dropdown-item">
+                    <i class="nav-icon fas fa-th"> <span>Profile</span></i>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <i class="nav-icon fas fa-tachometer-alt"> <span>Dashboard</span></i>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <i class="nav-icon fas fa-copy"> <span>My Courses</span></i>
+                </a>
+                <a href="#" class="dropdown-item nav-link">
+                    <i class="nav-icon fas fa-edit"> <span>Withdraw Request</span></i>
+                </a>
+
+                <div class="dropdown-divider">
+                </div>
+                <ul>
+                    <li class="nav-item">
+                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                            <button type="submit" class="nav-link btn btn-link">
+                                Logout
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+        }
+        else if (User.IsInRole("Student"))
+        {
+            
+        }
+    }
 else
 {
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        <a class="nav-link text-dark btn btn-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        <a class="nav-link text-dark btn btn-light" asp-area="Identity" asp-page="/Account/Register">Register</a>
     </li>
 }
 </ul>
