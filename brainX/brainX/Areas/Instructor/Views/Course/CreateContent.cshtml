@@ -2,11 +2,11 @@
 
 @{
     ViewData["Title"] = "Create Content";
-    var emailCount = 3;
-    if (Model.Emails != null)
-    {
-        emailCount = Model.Emails.Count;
-    }
+    var emailCount = 1;
+    // if (Model.ContentNames != null)
+    // {
+    //     emailCount = Model.ContentNames.Count;
+    // }
 }
 
 @* @section Styles
@@ -64,6 +64,8 @@
                             <form class="form-horizontal" method="post" asp-antiforgery="true" asp-action="CreateContent" asp-controller="Course" asp-area="Instructor" enctype="multipart/form-data">
                                 @* <input type="hidden" name="CourseName" asp-for="CourseName" value="@Model.ProjectName" /> *@
                                 <!-- Invaite Emails -->
+
+                                <input type="hidden" name="CourseId" asp-for="CourseId" value="@Model.CourseId" />
                                 <div class="col-lg-12 col-md-12 col-sm-12" id="membersDiv">
                                     
                                     <div asp-validation-summary="All" class="text-danger"></div>
@@ -93,7 +95,7 @@
                                                                 <label>Upload Video</label>
                                                             </div>
                                                             <div class="col-5 col-md-5">
-                                                                <input asp-for="VideoFiles[i-1]" placeholder="Upload Video" />
+                                                                <input name="VideoFiles" asp-for="VideoFiles[i-1]" />
                                                             </div>
                                                             <!-- ./col -->
                                                         </div>
@@ -103,7 +105,7 @@
                                                                 <label>Upload Note</label>
                                                             </div>
                                                             <div class="col-5 col-md-5">
-                                                                <input asp-for="VideoFiles[i-1]" placeholder="Upload Note" />
+                                                                <input name="NoteFiles" asp-for="NoteFiles[i-1]" />
                                                             </div>
                                                             <!-- ./col -->
                                                         </div>
@@ -124,7 +126,7 @@
                                             </button>
                                         </div>
                                         <div class="col-2">
-                                            <a class="btn btn-success btn-block" asp-area="Instructor" asp-controller="Course" asp-action="CreateContent" style="width: 82px; padding: 6px 6px">Save</a>
+                                            <button type="submit" class="btn btn-success float-right" style="margin-left: 26px;">Save Contents</button>
                                         </div>
                                         
                                     </div>
@@ -175,7 +177,7 @@
                             <label>Upload Video</label>
                         </div>
                         <div class="col-5 col-md-5">
-                            <input asp-for="VideoFiles[i-1]" placeholder="Upload Video" type="file"/>
+                            <input name="VideoFiles" asp-for="VideoFiles[i-1]" type="file"/>
                         </div>
                         <!-- ./col -->
                     </div>
@@ -185,7 +187,7 @@
                             <label>Upload Note</label>
                         </div>
                         <div class="col-5 col-md-5">
-                            <input asp-for="VideoFiles[i-1]" placeholder="Upload Note" type="file" />
+                            <input name="NoteFiles" asp-for="NoteFiles[i-1]" type="file" />
                         </div>
                         <!-- ./col -->
                     </div>

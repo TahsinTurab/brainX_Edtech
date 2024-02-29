@@ -8,6 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\uploads\dp\**" />
+    <Compile Remove="wwwroot\uploads\ques\**" />
+    <Compile Remove="wwwroot\uploads\videos\**" />
+    <Content Remove="wwwroot\uploads\dp\**" />
+    <Content Remove="wwwroot\uploads\ques\**" />
+    <Content Remove="wwwroot\uploads\videos\**" />
+    <EmbeddedResource Remove="wwwroot\uploads\dp\**" />
+    <EmbeddedResource Remove="wwwroot\uploads\ques\**" />
+    <EmbeddedResource Remove="wwwroot\uploads\videos\**" />
+    <None Remove="wwwroot\uploads\dp\**" />
+    <None Remove="wwwroot\uploads\ques\**" />
+    <None Remove="wwwroot\uploads\videos\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0" />
@@ -31,8 +46,7 @@
   <ItemGroup>
     <Folder Include="Areas\Instructor\Data\" />
     <Folder Include="Areas\Student\Controllers\" />
-    <Folder Include="wwwroot\uploads\dp\" />
-    <Folder Include="wwwroot\uploads\ques\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
 </Project>

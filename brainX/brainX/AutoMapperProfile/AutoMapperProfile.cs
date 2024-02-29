@@ -10,6 +10,8 @@ namespace brainX.AutoMapperProfile
         {
             CreateMap<CourseCreateModel, Course>()
                 .ReverseMap();
+            CreateMap<ContentCreateModel, Content>()
+                .ReverseMap();
         }
     }
 }

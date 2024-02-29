@@ -32,11 +32,11 @@ namespace brainX.Repositories.Implementation
             return CategoryList.OrderBy(s=>s).ToList();
         }
 
-        public async Task<bool> CreateAsync(CourseCreateModel courseModel, Guid instructorId)
+        public async Task<string> CreateAsync(CourseCreateModel courseModel, Guid instructorId)
         {
             if (courseModel == null)
             {
-                return false;
+                return null;
             }
 
             //Image Upload
@@ -55,7 +55,7 @@ namespace brainX.Repositories.Implementation
             instructor.Courses.Add(course);
             _dbContext.Update(instructor);
             await _dbContext.SaveChangesAsync();
-            return true;
+            return course.Id.ToString();
         }
 
         public Task<ICollection<Course>> GetAllAsync()
@@ -72,5 +72,40 @@ namespace brainX.Repositories.Implementation
         {
             throw new NotImplementedException();
         }
+
+        public async Task<bool> CreateContentsAsync(ContentCreateModel contentCreateModel) 
+        {
+            if(contentCreateModel == null)
+            {
+                return false;
+            }
+            var loop = contentCreateModel.ContentNames.Count;
+            var course = await _dbContext.Courses.FirstOrDefaultAsync(e => e.Id == contentCreateModel.CourseId);
+            for (int i=0; i < loop; i++)
+            {
+                var tempContent = new ContentCreateModel();
+                tempContent.CourseId = contentCreateModel.CourseId;
+                tempContent.ContentName = contentCreateModel.ContentNames[i];
+                if (contentCreateModel.VideoFiles[i] != null)
+                {
+                    var result = _fileService.SaveVideo(contentCreateModel.VideoFiles[i]);
+                    tempContent.VideoUrl = result.Item2;
+                }
+                if (contentCreateModel.NoteFiles[i] != null)
+                {
+                    var result = _fileService.SaveNote(contentCreateModel.NoteFiles[i]);
+                    tempContent.NoteUrl = result.Item2;
+                }
+                var content = _mapper.Map<Content>(tempContent);
+                content.Id = Guid.NewGuid();
+                await _dbContext.Contents.AddAsync(content);
+                await _dbContext.SaveChangesAsync();
+                course.Contents.Add(content);
+                _dbContext.Update(course);
+                await _dbContext.SaveChangesAsync();
+            }
+            return true;
+        }
+
     }
 }

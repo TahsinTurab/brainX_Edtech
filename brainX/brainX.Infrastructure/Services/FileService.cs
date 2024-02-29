@@ -18,7 +18,7 @@ namespace brainX.Infrastructure.Services
             try
             {
                 var wwwPath = this.environment.WebRootPath;
-                var path = Path.Combine(wwwPath, "Uploads");
+                var path = Path.Combine(wwwPath, "Uploads", "img");
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
@@ -63,6 +63,74 @@ namespace brainX.Infrastructure.Services
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+
+        public Tuple<int, string> SaveVideo(IFormFile videoFile)
+        {
+            try
+            {
+                var wwwPath = this.environment.WebRootPath;
+                var path = Path.Combine(wwwPath, "Uploads", "videos");
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                // Check the allowed extenstions
+                var ext = Path.GetExtension(videoFile.FileName);
+                var allowedExtensions = new string[] { ".mp4", ".mov", ".avi", ".wmv", ".mkv" };
+                if (!allowedExtensions.Contains(ext))
+                {
+                    string msg = string.Format("Only {0} extensions are allowed", string.Join(",", allowedExtensions));
+                    return new Tuple<int, string>(0, msg);
+                }
+                string uniqueString = Guid.NewGuid().ToString();
+                var newFileName = uniqueString + ext;
+                var fileWithPath = Path.Combine(path, newFileName);
+                var stream = new FileStream(fileWithPath, FileMode.Create);
+                videoFile.CopyTo(stream);
+                stream.Close();
+                return new Tuple<int, string>(1, newFileName);
+                ;
+            }
+            catch (Exception ex)
+            {
+                return new Tuple<int, string>(0, "Error has occured");
+            }
+        }
+
+        public Tuple<int, string> SaveNote(IFormFile noteFile)
+        {
+            try
+            {
+                var wwwPath = this.environment.WebRootPath;
+                var path = Path.Combine(wwwPath, "Uploads", "notes");
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                // Check the allowed extenstions
+                var ext = Path.GetExtension(noteFile.FileName);
+                var allowedExtensions = new string[] { ".pdf", ".doc", ".docx"};
+                if (!allowedExtensions.Contains(ext))
+                {
+                    string msg = string.Format("Only {0} extensions are allowed", string.Join(",", allowedExtensions));
+                    return new Tuple<int, string>(0, msg);
+                }
+                string uniqueString = Guid.NewGuid().ToString();
+                var newFileName = uniqueString + ext;
+                var fileWithPath = Path.Combine(path, newFileName);
+                var stream = new FileStream(fileWithPath, FileMode.Create);
+                noteFile.CopyTo(stream);
+                stream.Close();
+                return new Tuple<int, string>(1, newFileName);
+                ;
+            }
+            catch (Exception ex)
+            {
+                return new Tuple<int, string>(0, "Error has occured");
             }
         }
     }
