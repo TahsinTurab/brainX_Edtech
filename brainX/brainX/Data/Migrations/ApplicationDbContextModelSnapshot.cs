@@ -255,6 +255,21 @@ namespace brainX.Data.Migrations
                     b.ToTable("Accounts");
                 });
 
+            modelBuilder.Entity("brainX.Infrastructure.Domains.Category", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("brainX.Infrastructure.Domains.Content", b =>
                 {
                     b.Property<Guid>("Id")
@@ -288,6 +303,10 @@ namespace brainX.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateOnly>("CreationDate")
                         .HasColumnType("date");

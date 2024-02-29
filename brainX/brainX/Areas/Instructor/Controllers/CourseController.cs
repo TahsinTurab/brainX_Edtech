@@ -1,6 +1,8 @@
-﻿using brainX.Data;
+﻿using brainX.Areas.Instructor.Models;
+using brainX.Data;
 using brainX.Infrastructure.DTOs;
 using brainX.Models;
+using brainX.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,11 +15,13 @@ namespace brainX.Areas.Instructor.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly ICourseRepository _courseRepository;
 
-        public CourseController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public CourseController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ICourseRepository courseRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _courseRepository = courseRepository;
         }
 
         [HttpGet]
@@ -26,12 +30,32 @@ namespace brainX.Areas.Instructor.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            var model = new CourseCreateModel();
+            model.CategoryList = await _courseRepository.GetAllCategoriesAsync();
+            return View(model);
+        }
+
         [HttpPost]
-        public async Task<IActionResult> PostAsync(CourseDto courseDto ) 
+        public async Task<IActionResult> Create(CourseCreateModel courseModel) 
         {
             var applicationUser = await _userManager.GetUserAsync(HttpContext.User);
-            
-            return RedirectToAction("Index");
+
+            return RedirectToAction(nameof(CreateContent));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CreateContent()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateContent(ContentCreateModel contentModel)
+        {
+            return RedirectToAction(nameof(Index));
         }
     }
 }

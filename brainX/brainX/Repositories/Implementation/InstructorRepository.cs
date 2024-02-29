@@ -33,7 +33,7 @@ namespace brainX.Infrastructure.Repositories.Implementation
             return;
         }
 
-        public Task<ICollection<Course>> GetAllAsync()
+        public Task<ICollection<Instructor>> GetAllAsync()
         {
             throw new NotImplementedException();
         }

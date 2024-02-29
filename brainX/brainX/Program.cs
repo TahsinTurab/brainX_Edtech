@@ -4,6 +4,8 @@ using brainX.Infrastructure.Repositories.Implementation;
 using brainX.Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using brainX.Repositories.Interface;
+using brainX.Repositories.Implementation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 
 builder.Services.AddScoped<IFileService,FileService>();
 builder.Services.AddScoped<IInstructorRepository, InstructorRepository>();
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

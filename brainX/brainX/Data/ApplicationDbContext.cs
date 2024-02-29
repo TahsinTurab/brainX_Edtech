@@ -14,5 +14,6 @@ namespace brainX.Data
         public DbSet<Content> Contents { get; set; }
         public DbSet<Instructor> Instructors { get; set; }
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace brainX.Infrastructure.Domains
         public Guid Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public string Category { get; set; }
         public string ThumbnailUrl { get; set; }
         public int Duration { get; set; }
         public int Fee { get; set; }

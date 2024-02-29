@@ -8969,6 +8969,10 @@
       "PackagePath": "staticwebassets\\uploads\\b0be7423-c28a-47aa-9adf-1cd4183ea0ca.jpg"
     },
     {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\ee3cf65a-1c39-4b60-9a90-3715c639d798.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ee3cf65a-1c39-4b60-9a90-3715c639d798.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.brainX.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

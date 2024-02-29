@@ -12,7 +12,7 @@ namespace brainX.Infrastructure.Repositories.Interface
     {
         Task CreateAsync(Guid instructorId, string userName);
         Task<bool> GetbyIdAsync(Guid id);
-        Task<ICollection<Course>> GetAllAsync();
+        Task<ICollection<Instructor>> GetAllAsync();
         Task<bool> UpdateAsync(Instructor instructor);
     }
 }
