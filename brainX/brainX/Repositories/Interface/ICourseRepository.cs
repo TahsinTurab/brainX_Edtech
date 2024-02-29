@@ -1,10 +1,11 @@
-﻿using brainX.Infrastructure.Domains;
+﻿using brainX.Areas.Instructor.Models;
+using brainX.Infrastructure.Domains;
 
 namespace brainX.Repositories.Interface
 {
     public interface ICourseRepository
     {
-        Task CreateAsync(Course course);
+        Task<bool> CreateAsync(CourseCreateModel course, Guid instructorId);
         Task<bool> GetbyIdAsync(Guid id);
         Task<ICollection<Course>> GetAllAsync();
         Task<bool> UpdateAsync(Course course);

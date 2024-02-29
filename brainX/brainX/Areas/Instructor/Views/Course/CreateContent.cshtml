@@ -2,14 +2,14 @@
 
 @{
     ViewData["Title"] = "Create Content";
-    //var contentCount = 3;
-    // if (Model.Emails != null)
-    // {
-    //     emailCount = Model.Emails.Count;
-    // }
+    var emailCount = 3;
+    if (Model.Emails != null)
+    {
+        emailCount = Model.Emails.Count;
+    }
 }
 
-@section Styles
+@* @section Styles
 {
     <style>
         .removeMember {
@@ -28,19 +28,25 @@
             margin-left: 8%;
         }
     </style>
-}
-
+} *@
+<br />
+<br />
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-6">
             <h3>@ViewData["Title"]</h3>
-            <h5>@TempData.Peek("CourseTitle")</h5>
         </div>
         <div class="col-6">
         </div>
     </div>
 </div>
-
+@if (!String.IsNullOrEmpty(Model.StatusMessage))
+{
+    <div class="alert alert-success" role="alert">
+        <p>@Model.StatusMessage</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
@@ -55,94 +61,72 @@
                     </div><!-- /.card-header -->
                     <div class="card-body">
                         <div class="tab-content">
-                            <form class="form-horizontal" method="post" asp-antiforgery="true" asp-action="CreateContent" asp-controller="Course" asp-area="Instructor">
+                            <form class="form-horizontal" method="post" asp-antiforgery="true" asp-action="CreateContent" asp-controller="Course" asp-area="Instructor" enctype="multipart/form-data">
                                 @* <input type="hidden" name="CourseName" asp-for="CourseName" value="@Model.ProjectName" /> *@
                                 <!-- Invaite Emails -->
-                                <div class="col-lg-8 col-md-12 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body" id="membersDiv">
-                                            <div asp-validation-summary="All" class="text-danger"></div>
-                                            <div class="row mt-20">
-                                                <div class="col-7 col-md-7">
-                                                    <div class="row">
-                                                        <div class="col-1 col-md-1">
-                                                            <h5 class="emailSerial">1</h5>
+                                <div class="col-lg-12 col-md-12 col-sm-12" id="membersDiv">
+                                    
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                            
+                                    @{
+                                        for (int i = 1; i <= emailCount; i++)
+                                        {
+                                            <div class="card">
+                                                <div class="row mt-60 card-body">
+                                                    <div class="col-10 col-md-10">
+                                                        <div class="row">
+                                                            <div class="col-5 col-md-5">
+                                                                <h5 class="emailSerial">Content @i</h5>
+                                                            </div>
                                                         </div>
-                                                        <!-- ./col -->
-                                                        <div class="col-11 col-md-11">
-                                                            <input type="email" class="form-control" name="Emails" asp-for="Emails[0]" placeholder="Email Address">
+                                                        <div class="row">
+                                                            <!-- ./col -->
+                                                            <div class="col-11 col-md-11">
+                                                                <input type="text" class="form-control" name="ContentNames" asp-for="ContentNames[i-1]" placeholder="Enter Content Name">
+                                                            </div>
+                                                            <!-- ./col -->
                                                         </div>
-                                                        <!-- ./col -->
+                                                        <br />
+                                                        <div class="row">
+                                                            <!-- ./col -->
+                                                            <div class="col-3 col-md-5">
+                                                                <label>Upload Video</label>
+                                                            </div>
+                                                            <div class="col-5 col-md-5">
+                                                                <input asp-for="VideoFiles[i-1]" placeholder="Upload Video" />
+                                                            </div>
+                                                            <!-- ./col -->
+                                                        </div>
+                                                        <div class="row">
+                                                            <!-- ./col -->
+                                                            <div class="col-3 col-md-5">
+                                                                <label>Upload Note</label>
+                                                            </div>
+                                                            <div class="col-5 col-md-5">
+                                                                <input asp-for="VideoFiles[i-1]" placeholder="Upload Note" />
+                                                            </div>
+                                                            <!-- ./col -->
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <!-- ./col -->
-                                                <div class="col-4 col-md-4 text-center">
-                                                    <select class="custom-select form-control-border" id="exampleSelectBorder">
-                                                        <option>Worker</option>
-                                                    </select>
-                                                </div>
-                                                <!-- ./col -->
+                                                <!-- /.row -->
                                             </div>
-                                            @{
-                                                for (int i = 2; i <= emailCount; i++)
-                                                {
-                                                    <!-- /.row -->
-                                                    <div class="row mt-30">
-                                                        <div class="col-7 col-md-7">
-                                                            <div class="row">
-                                                                <div class="col-1 col-md-1">
-                                                                    <h5 class="emailSerial">@i</h5>
-                                                                </div>
-                                                                <!-- ./col -->
-                                                                <div class="col-11 col-md-11">
-                                                                    <input type="email" class="form-control" name="Emails" asp-for="Emails[i-1]" placeholder="Email Address">
-                                                                </div>
-                                                                <!-- ./col -->
-                                                            </div>
-                                                        </div>
-                                                        <!-- ./col -->
-                                                        <div class="col-5 col-md-5">
-                                                            <div class="row">
-                                                                <div class="col-10 col-md-10 text-center">
-                                                                    <select class="custom-select form-control-border" id="exampleSelectBorder">
-                                                                        <option>Worker</option>
-                                                                    </select>
-                                                                </div>
-                                                                <!-- ./col -->
-                                                                <div class="col-2 col-md-2">
-                                                                    <a class="removeMember" title="Remove invitation" type="button"> &times; </a>
-                                                                </div>
-                                                                <!-- ./col -->
-                                                            </div>
-                                                        </div>
-                                                        <!-- ./col -->
-                                                    </div>
-                                                    <!-- /.row -->
-                                                }
-                                            }
-                                        </div>
-                                        <!-- /.card-body -->
-                                        <div class="row mt-30" style="margin-bottom: 16px;">
-                                            <button type="button" id="addMemberBtn" class="btn bg-gradient-info btn-flat" title="Remove invitation">
-                                                <b>+ Add another member</b>
-                                            </button>
-                                        </div>
-                                    </div>
+                                                    
+                                        }
+                                    }
                                 </div>
-                                <!-- /.Invaite Emails -->
 
                                 <div class="container-fluid">
                                     <div class="row mb-2">
                                         <div class="col-2">
-                                            <a class="btn btn-secondary btn-block" asp-area="App" asp-controller="Project" asp-action="Index" style="width: 82px; padding: 6px 6px">Back</a>
+                                            <button type="button" id="addMemberBtn" class="btn bg-gradient-info btn-flat" title="Remove content">
+                                                <b>+ Add more content</b>
+                                            </button>
                                         </div>
-                                        <div class="col-6">
-                                            <div class="float-right">
-                                                <button class="btn bg-gradient-success btn-flat" type="submit">
-                                                    Send Invitations
-                                                </button>
-                                            </div>
+                                        <div class="col-2">
+                                            <a class="btn btn-success btn-block" asp-area="Instructor" asp-controller="Course" asp-action="CreateContent" style="width: 82px; padding: 6px 6px">Save</a>
                                         </div>
+                                        
                                     </div>
                                 </div>
                             </form>
@@ -168,35 +152,45 @@
         document.getElementById("addMemberBtn").addEventListener("click", () => {
             var nextSerial = document.getElementsByClassName('emailSerial').length + 1;
             var emailChildDiv = document.createElement("div");
-            emailChildDiv.className = "row mt-30";
+            emailChildDiv.className = "card";
             emailChildDiv.innerHTML +=
-                `<div class="col-7 col-md-7">
-                          <div class="row">
-                            <div class="col-1 col-md-1">
-                              <h5 class="emailSerial">` + nextSerial + `</h5>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-11 col-md-11">
-                              <input type="email" class="form-control" name="Emails" placeholder="Email Address">
-                            </div>
-                            <!-- ./col -->
-                          </div>
+                `<div class="row mt-60 card-body">
+                <div class="col-10 col-md-10">
+                    <div class="row">
+                        <div class="col-5 col-md-5">
+                            <h5 class="emailSerial">Content ` +nextSerial+ `</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- ./col -->
+                        <div class="col-11 col-md-11">
+                            <input type="text" class="form-control" name="ContentNames" asp-for="ContentNames[i-1]" placeholder="Enter Content Name">
                         </div>
                         <!-- ./col -->
+                    </div>
+                    <br />
+                    <div class="row">
+                        <!-- ./col -->
+                        <div class="col-3 col-md-5">
+                            <label>Upload Video</label>
+                        </div>
                         <div class="col-5 col-md-5">
-                          <div class="row">
-                            <div class="col-10 col-md-10 text-center">
-                              <select class="custom-select form-control-border" id="exampleSelectBorder">
-                                <option>Worker</option>
-                              </select>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-2 col-md-2">
-                                      <a class="removeMember" title="Remove invitation" type="button"> &times; </a>
-                            </div>
-                            <!-- ./col -->
-                          </div>
-                        </div>`;
+                            <input asp-for="VideoFiles[i-1]" placeholder="Upload Video" type="file"/>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <div class="row">
+                        <!-- ./col -->
+                        <div class="col-3 col-md-5">
+                            <label>Upload Note</label>
+                        </div>
+                        <div class="col-5 col-md-5">
+                            <input asp-for="VideoFiles[i-1]" placeholder="Upload Note" type="file" />
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                </div>
+            </div>`;
             document.getElementById("membersDiv").appendChild(emailChildDiv);
         });
 
@@ -211,7 +205,7 @@
                 var serials = document.getElementsByClassName('emailSerial');
                 var totalEmails = serials.length;
                 for (let i = 1; i <= totalEmails; i++) {
-                    serials[i - 1].innerHTML = i;
+                    serials[i - 1].innerHTML = "Content " + i;
                 }
             }
         });

@@ -1,6 +1,8 @@
-﻿using brainX.Areas.Instructor.Models;
+﻿using AutoMapper;
+using brainX.Areas.Instructor.Models;
 using brainX.Data;
 using brainX.Infrastructure.DTOs;
+using brainX.Infrastructure.Services;
 using brainX.Models;
 using brainX.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
@@ -17,8 +19,11 @@ namespace brainX.Areas.Instructor.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ICourseRepository _courseRepository;
 
-        public CourseController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ICourseRepository courseRepository)
+        public CourseController(UserManager<ApplicationUser> userManager, 
+            SignInManager<ApplicationUser> signInManager, 
+            ICourseRepository courseRepository)
         {
+            
             _userManager = userManager;
             _signInManager = signInManager;
             _courseRepository = courseRepository;
@@ -41,20 +46,41 @@ namespace brainX.Areas.Instructor.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CourseCreateModel courseModel) 
         {
-            var applicationUser = await _userManager.GetUserAsync(HttpContext.User);
-
-            return RedirectToAction(nameof(CreateContent));
+            var statusMessage = "Your course didn't created";
+            try
+            {
+                var applicationUser = await _userManager.GetUserAsync(HttpContext.User);
+                var isOk = true;
+                //var isOk = await _courseRepository.CreateAsync(courseModel, Guid.Parse(applicationUser.Id));
+                if (isOk == true)
+                {
+                    return RedirectToAction("CreateContent");
+                }
+                else
+                {
+                    courseModel.StatusMessage = statusMessage;
+                    return RedirectToAction();
+                }
+            }
+            catch
+            {
+                courseModel.StatusMessage = statusMessage;
+                return RedirectToAction(nameof(CreateContent));
+            }
         }
 
         [HttpGet]
         public async Task<IActionResult> CreateContent()
         {
-            return View();
+            var model = new ContentCreateModel();
+            model.StatusMessage = "Your course has been created Successfully! Now add course contents.";
+            return View(model);
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateContent(ContentCreateModel contentModel)
         {
+            
             return RedirectToAction(nameof(Index));
         }
     }
