@@ -162,5 +162,10 @@ namespace brainX.Areas.Instructor.Controllers
             ViewBag.Id = Id;
             return View();
         }
+
+        public async Task<IActionResult> Delete(Guid Id)
+        {
+            return View();
+        }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w1eHj5pIpKKINHMzQ7VL1mgwE39B/w9n+Wbmtq3J6kc=",
+  "Hash": "Kp+/OhkH65Ypzwo6qaXWeRlbTA92Y6E1l8/XbUzNZaw=",
   "Source": "brainX",
   "BasePath": "_content/brainX",
   "Mode": "Default",
@@ -43886,6 +43886,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\img\\707c9061-2dfb-4163-aefa-7ccc1acb6ce5.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\c86ebe27-5148-4126-bfbf-b301efb392d7.jpeg",
+      "SourceId": "brainX",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\",
+      "BasePath": "_content/brainX",
+      "RelativePath": "uploads/img/c86ebe27-5148-4126-bfbf-b301efb392d7.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\img\\c86ebe27-5148-4126-bfbf-b301efb392d7.jpeg"
     },
     {
       "Identity": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\d06174f8-4c8d-4018-8abc-742aeb3b77fd.jpeg",
