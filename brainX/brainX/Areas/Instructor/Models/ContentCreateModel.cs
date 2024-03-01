@@ -10,8 +10,10 @@ namespace brainX.Areas.Instructor.Models
         public List<IFormFile> NoteFiles { get; set; }
         public List<string> NoteUrls { get; set; }
         public List<string> VideoUrls { get; set; }
+        public List<int> ContentNumbers { get; set; }
         public Guid CourseId { get; set; }
         public string ContentName { get; set; }
+        public int ContentNo { get; set; } 
         public string NoteUrl { get; set; }
         public string VideoUrl { get; set; }
 

@@ -9,9 +9,10 @@ namespace brainX.Infrastructure.Domains
     public class Content
     {
         public Guid Id { get; set; }
-        public string ContentName { get; set; }
-        public string NoteUrl { get; set; }
-        public string VideoUrl { get; set; }
+        public int ContentNo { get; set; }
+        public string? ContentName { get; set; }
+        public string? NoteUrl { get; set; }
+        public string? VideoUrl { get; set; }
         public Course Course { get; set; }
         public Guid CourseId { get; set; }
     }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("brainX.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a2139c35e8dcdaea81f12700265e077e884ac24")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6715e6b4727ad3632a123d5c9734cda6d74ac419")]
 [assembly: System.Reflection.AssemblyProductAttribute("brainX.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("brainX.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

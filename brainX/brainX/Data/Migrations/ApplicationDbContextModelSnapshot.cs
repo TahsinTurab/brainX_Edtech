@@ -277,18 +277,18 @@ namespace brainX.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ContentName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ContentNo")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("NoteUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("VideoUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

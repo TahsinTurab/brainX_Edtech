@@ -52,7 +52,7 @@ namespace brainX.Infrastructure.Services
             try
             {
                 var wwwPath = this.environment.WebRootPath;
-                var path = Path.Combine(wwwPath, "Uploads\\", imageFileName);
+                var path = Path.Combine(wwwPath, "Uploads\\img\\", imageFileName);
                 if (System.IO.File.Exists(path))
                 {
                     System.IO.File.Delete(path);

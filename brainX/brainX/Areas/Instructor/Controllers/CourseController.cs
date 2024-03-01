@@ -78,14 +78,6 @@ namespace brainX.Areas.Instructor.Controllers
             return View(model);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> IndexAsync(string categoryName,)
-        //{
-        //    var model = new CourseViewModel();
-        //    model.CategoryList = await _courseRepository.GetAllCategoriesAsync();
-        //    return View();
-        //}
-
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -122,7 +114,7 @@ namespace brainX.Areas.Instructor.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> CreateContent(string id, string message)
+        public async Task<IActionResult> CreateContent(string id, string message = null)
         {
             var model = new ContentCreateModel();
             model.CourseId = Guid.Parse(id);
@@ -157,11 +149,48 @@ namespace brainX.Areas.Instructor.Controllers
             }
         }
 
-        public async Task<IActionResult> Update(Guid Id)
+        public async Task<IActionResult> Update(Guid id, string message = null)
         {
-            ViewBag.Id = Id;
-            return View();
+            ViewBag.Message = message;
+            var model = await _courseRepository.GetCourseByIdAsync(id);
+            return View(model);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(CourseCreateModel courseUpdateModel)
+        {
+            var result = await _courseRepository.UpdateAsync(courseUpdateModel);
+            ViewBag.isOk = false;
+            string Message = "Course Information didn't Updated!";
+            if (result == true)
+            {
+                ViewBag.isOk = true;
+                Message = "Your Course Information Updated Successfully";
+            }
+            return RedirectToAction("Update", new {Id = courseUpdateModel.Id, message = Message });
+        }
+
+        public async Task<IActionResult> UpdateContent(Guid id, string message = null)
+        {
+            ViewBag.Message = message;
+            var model = await _courseRepository.GetContentsOfCourseById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateContent(ContentUpdateModel contentUpdateModel)
+        {
+            //var result = await _courseRepository.UpdateContentAsync(contentUpdateModel);
+            ViewBag.isOk = false;
+            string Message = "Course Content didn't Updated!";
+            //if (result == true)
+            //{
+            //    ViewBag.isOk = true;
+            //    Message = "Your Course Content Updated Successfully";
+            //}
+            return RedirectToAction("UpdateContent", new { Id = contentUpdateModel.Id, message = Message });
+        }
+
 
         public async Task<IActionResult> Delete(Guid Id)
         {

@@ -76,7 +76,7 @@
                                         <h6>@course.Difficulities</h6>
                                     </div>
                                     <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>@course.Duration Mins</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>@course.Duration Hrs</small>
                                         <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
                                     </div>
                                     <div class="card-footer">
@@ -106,7 +106,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a asp-area="Instructor" asp-controller="Course" asp-action="Update" asp-route-id="@course.Id" class="btn btn-primary">
+                                            <a asp-area="Instructor" asp-controller="Course" asp-action="Update" asp-route-id="@course.Id" asp-route-message=@null class="btn btn-primary">
                                                 Update Course &nbsp; <i class="fas fa-arrow-right"></i>
                                             </a>
                                         </div>

@@ -4,6 +4,7 @@ using brainX.Data;
 using brainX.Infrastructure.Domains;
 using brainX.Infrastructure.Services;
 using brainX.Repositories.Interface;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace brainX.Repositories.Implementation
@@ -64,6 +65,17 @@ namespace brainX.Repositories.Implementation
             return dbCourseList;
         }
 
+        public async Task<CourseCreateModel> GetCourseByIdAsync(Guid id)
+        {
+            var course = await _dbContext.Courses.FirstOrDefaultAsync(e => e.Id == id);
+            var courseUpdateModel = new CourseCreateModel();
+            //courseUpdateModel.CourseModel = course;
+            courseUpdateModel = _mapper.Map<CourseCreateModel>(course);
+            //courseUpdateModel.ContentModels = (List<Content>)course.Contents;
+            courseUpdateModel.CategoryList = await GetAllCategoriesAsync();
+            return courseUpdateModel;
+        }
+
         public async Task<ICollection<Course>> GetAllAsync(Guid id)
         {
             var courseList = await GetAllAsync();
@@ -83,12 +95,6 @@ namespace brainX.Repositories.Implementation
         {
             throw new NotImplementedException();
         }
-
-        public Task<bool> UpdateAsync(Course course)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<bool> CreateContentsAsync(ContentCreateModel contentCreateModel) 
         {
             if(contentCreateModel == null)
@@ -102,7 +108,7 @@ namespace brainX.Repositories.Implementation
                 var tempContent = new ContentCreateModel();
                 tempContent.CourseId = contentCreateModel.CourseId;
                 tempContent.ContentName = contentCreateModel.ContentNames[i];
-                if (contentCreateModel.VideoFiles!=null && contentCreateModel.VideoFiles.Count>=i && contentCreateModel.VideoFiles[i] == null)
+                if (contentCreateModel.VideoFiles!=null && contentCreateModel.VideoFiles.Count>=i && contentCreateModel.VideoFiles[i] != null)
                 {
                     var result = _fileService.SaveVideo(contentCreateModel.VideoFiles[i]);
                     tempContent.VideoUrl = result.Item2;
@@ -116,6 +122,7 @@ namespace brainX.Repositories.Implementation
                 
                 var content = _mapper.Map<Content>(tempContent);
                 content.Id = Guid.NewGuid();
+                content.ContentNo = contentCreateModel.ContentNumbers[i];
                 await _dbContext.Contents.AddAsync(content);
                 await _dbContext.SaveChangesAsync();
                 course.Contents.Add(content);
@@ -123,6 +130,86 @@ namespace brainX.Repositories.Implementation
                 await _dbContext.SaveChangesAsync();
             }
             return true;
+        }
+
+        public async Task<ContentUpdateModel> GetContentsOfCourseById(Guid Id)
+        {
+            var allContents = await _dbContext.Contents.OrderBy(item => item.ContentNo).ToListAsync();
+            var contents = new List<Content>();
+            foreach(var content in allContents)
+            {
+                if(content.CourseId == Id)
+                {
+                    contents.Add(content);
+                }
+            }
+            
+            var returnModel = new ContentUpdateModel();
+            returnModel.Id = Id;
+            returnModel.oldContent = contents;
+            return returnModel;
+        }
+        public async Task<bool> UpdateAsync(CourseCreateModel course)
+        {
+            var dbCourse = await _dbContext.Courses.FirstOrDefaultAsync(e => e.Id == course.Id);
+            if (dbCourse == null)
+            {
+                return false;
+            }
+            else
+            {
+                dbCourse.Title = course.Title;
+                dbCourse.Category = course.Category;
+                dbCourse.Difficulities = course.Difficulities;
+                dbCourse.Description = course.Description;
+                dbCourse.Fee = course.Fee;
+                if (course.ThumbnailFile != null)
+                {
+                    var result = _fileService.SaveImage(course.ThumbnailFile);
+                    if (result.Item1 == 1)
+                    {
+                        var oldImage = dbCourse.ThumbnailUrl;
+                        dbCourse.ThumbnailUrl = result.Item2;
+                        if (oldImage != null)
+                        {
+                            var deleteResult = _fileService.DeleteImage(oldImage);
+                        }
+                    }
+                }
+                _dbContext.Update(dbCourse);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+        }
+
+        public async Task<bool> UpdateContentAsync(ContentUpdateModel contentUpdateModel)
+        {
+            var contents = await GetContentsOfCourseById(contentUpdateModel.Id);
+            var dbContents = contents.oldContent;
+            try
+            {
+                for(int i = 0; i < dbContents.Count; i++)
+                {
+                    dbContents[i].ContentName = contentUpdateModel.oldContent[i].ContentName;
+                    //if (contentUpdateModel.VideoFiles[i] != null)
+                    //{
+
+                    //}
+                    //if (contentUpdateModel.NoteFiles[i] != null)
+                    //{
+
+                    //}
+                    _dbContext.Update(dbContents);
+                    await _dbContext.SaveChangesAsync();
+                }
+                
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
 
     }

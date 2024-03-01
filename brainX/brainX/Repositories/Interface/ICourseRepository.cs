@@ -8,9 +8,13 @@ namespace brainX.Repositories.Interface
         Task<string> CreateAsync(CourseCreateModel course, Guid instructorId);
         Task<bool> GetbyIdAsync(Guid id);
         Task<ICollection<Course>> GetAllAsync();
-        Task<bool> UpdateAsync(Course course);
+        Task<bool> UpdateAsync(CourseCreateModel course);
         Task<List<string>> GetAllCategoriesAsync();
         Task<bool> CreateContentsAsync(ContentCreateModel contentCreateModel);
         Task<ICollection<Course>> GetAllAsync(Guid id);
+        Task<CourseCreateModel> GetCourseByIdAsync(Guid id);
+        Task<ContentUpdateModel> GetContentsOfCourseById(Guid Id);
+        Task<bool> UpdateContentAsync(ContentUpdateModel contentUpdateModel);
+
     }
 }

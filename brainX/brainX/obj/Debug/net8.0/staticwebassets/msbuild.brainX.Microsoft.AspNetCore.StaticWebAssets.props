@@ -35840,12 +35840,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\wow\wow.min.js))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\01f97852-f27b-4882-927f-fc21dbbd5560.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\08300d1d-1c5e-48e2-a07b-004baedf5f39.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/img/01f97852-f27b-4882-927f-fc21dbbd5560.jpeg</RelativePath>
+      <RelativePath>uploads/img/08300d1d-1c5e-48e2-a07b-004baedf5f39.jpeg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -35854,14 +35854,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\01f97852-f27b-4882-927f-fc21dbbd5560.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\08300d1d-1c5e-48e2-a07b-004baedf5f39.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\16f02c6f-eb0e-4c72-a1ee-b1abd9998242.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\11062791-3d02-4237-b881-6ce4e0821b43.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/img/16f02c6f-eb0e-4c72-a1ee-b1abd9998242.jpeg</RelativePath>
+      <RelativePath>uploads/img/11062791-3d02-4237-b881-6ce4e0821b43.jpeg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -35870,14 +35870,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\16f02c6f-eb0e-4c72-a1ee-b1abd9998242.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\11062791-3d02-4237-b881-6ce4e0821b43.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\54356644-16e1-4e62-8358-f9d13843466a.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\16e772ca-06c6-47cf-a014-9358f0d4267e.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/img/54356644-16e1-4e62-8358-f9d13843466a.jpeg</RelativePath>
+      <RelativePath>uploads/img/16e772ca-06c6-47cf-a014-9358f0d4267e.jpeg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -35886,14 +35886,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\54356644-16e1-4e62-8358-f9d13843466a.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\16e772ca-06c6-47cf-a014-9358f0d4267e.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\57da5616-363a-4bea-8fc8-0ebe6d27207e.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\283e0d74-bcc3-49c4-bf91-e5b6e92be0e8.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/img/57da5616-363a-4bea-8fc8-0ebe6d27207e.jpeg</RelativePath>
+      <RelativePath>uploads/img/283e0d74-bcc3-49c4-bf91-e5b6e92be0e8.jpeg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -35902,14 +35902,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\57da5616-363a-4bea-8fc8-0ebe6d27207e.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\283e0d74-bcc3-49c4-bf91-e5b6e92be0e8.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\6b0c2d31-bc10-41d7-a334-f699d10c4f72.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\4be0e28a-c7ab-4fac-9b6a-f4cfc8faecb3.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/img/6b0c2d31-bc10-41d7-a334-f699d10c4f72.jpeg</RelativePath>
+      <RelativePath>uploads/img/4be0e28a-c7ab-4fac-9b6a-f4cfc8faecb3.jpeg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -35918,14 +35918,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\6b0c2d31-bc10-41d7-a334-f699d10c4f72.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\4be0e28a-c7ab-4fac-9b6a-f4cfc8faecb3.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\707c9061-2dfb-4163-aefa-7ccc1acb6ce5.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\7020eb76-7e9c-4ba7-ac85-70f736b768c8.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/img/707c9061-2dfb-4163-aefa-7ccc1acb6ce5.jpeg</RelativePath>
+      <RelativePath>uploads/img/7020eb76-7e9c-4ba7-ac85-70f736b768c8.jpeg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -35934,14 +35934,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\707c9061-2dfb-4163-aefa-7ccc1acb6ce5.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\7020eb76-7e9c-4ba7-ac85-70f736b768c8.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\c86ebe27-5148-4126-bfbf-b301efb392d7.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\964a7499-a1f9-4fec-95e7-d04eabb526b1.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/img/c86ebe27-5148-4126-bfbf-b301efb392d7.jpeg</RelativePath>
+      <RelativePath>uploads/img/964a7499-a1f9-4fec-95e7-d04eabb526b1.jpeg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -35950,14 +35950,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\c86ebe27-5148-4126-bfbf-b301efb392d7.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\964a7499-a1f9-4fec-95e7-d04eabb526b1.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\d06174f8-4c8d-4018-8abc-742aeb3b77fd.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\9a146944-c8ae-4517-9820-cff7da704124.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/img/d06174f8-4c8d-4018-8abc-742aeb3b77fd.jpeg</RelativePath>
+      <RelativePath>uploads/img/9a146944-c8ae-4517-9820-cff7da704124.jpeg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -35966,14 +35966,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\d06174f8-4c8d-4018-8abc-742aeb3b77fd.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\9a146944-c8ae-4517-9820-cff7da704124.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\e1d669c6-f6b8-4ba1-8064-87bd538f7fdf.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\c5370e01-c424-422c-9b2a-7b778852c13b.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/img/e1d669c6-f6b8-4ba1-8064-87bd538f7fdf.jpeg</RelativePath>
+      <RelativePath>uploads/img/c5370e01-c424-422c-9b2a-7b778852c13b.jpeg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -35982,14 +35982,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\e1d669c6-f6b8-4ba1-8064-87bd538f7fdf.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\c5370e01-c424-422c-9b2a-7b778852c13b.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\f7fb7d5e-69bc-4866-9153-c75adfc146bb.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\c980dd3b-da33-4b12-9e28-9202fc722460.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/img/f7fb7d5e-69bc-4866-9153-c75adfc146bb.jpeg</RelativePath>
+      <RelativePath>uploads/img/c980dd3b-da33-4b12-9e28-9202fc722460.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -35998,14 +35998,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\f7fb7d5e-69bc-4866-9153-c75adfc146bb.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\c980dd3b-da33-4b12-9e28-9202fc722460.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\09f992ba-6110-4f4f-a4ec-acf36fe948c8.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\e3b92db1-8d8e-4e60-8891-c9c29258f10a.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/notes/09f992ba-6110-4f4f-a4ec-acf36fe948c8.pdf</RelativePath>
+      <RelativePath>uploads/img/e3b92db1-8d8e-4e60-8891-c9c29258f10a.jpeg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36014,14 +36014,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\09f992ba-6110-4f4f-a4ec-acf36fe948c8.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\img\e3b92db1-8d8e-4e60-8891-c9c29258f10a.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\a26ed767-9e24-4189-b889-8e7fedbbde7f.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\35e2b637-f7fe-464a-9ebc-cd208f4e92c1.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/notes/a26ed767-9e24-4189-b889-8e7fedbbde7f.pdf</RelativePath>
+      <RelativePath>uploads/notes/35e2b637-f7fe-464a-9ebc-cd208f4e92c1.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36030,14 +36030,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\a26ed767-9e24-4189-b889-8e7fedbbde7f.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\35e2b637-f7fe-464a-9ebc-cd208f4e92c1.pdf))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\a9a553dd-1580-42f3-8ecb-889ee131d2b3.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\881592ff-1295-4ea9-b084-094cabfcabcc.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/notes/a9a553dd-1580-42f3-8ecb-889ee131d2b3.pdf</RelativePath>
+      <RelativePath>uploads/notes/881592ff-1295-4ea9-b084-094cabfcabcc.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36046,14 +36046,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\a9a553dd-1580-42f3-8ecb-889ee131d2b3.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\881592ff-1295-4ea9-b084-094cabfcabcc.pdf))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\cbd77526-2c1e-450e-8355-7a14fabd6738.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\968d550b-cc5d-4a5f-bfca-1952ccda3171.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/notes/cbd77526-2c1e-450e-8355-7a14fabd6738.pdf</RelativePath>
+      <RelativePath>uploads/notes/968d550b-cc5d-4a5f-bfca-1952ccda3171.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36062,14 +36062,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\cbd77526-2c1e-450e-8355-7a14fabd6738.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\968d550b-cc5d-4a5f-bfca-1952ccda3171.pdf))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\fbe57015-8d96-4953-956c-f183fdf33b91.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\b4033d5d-f53a-4390-9395-da7ba70764d8.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>brainX</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/brainX</BasePath>
-      <RelativePath>uploads/notes/fbe57015-8d96-4953-956c-f183fdf33b91.pdf</RelativePath>
+      <RelativePath>uploads/notes/b4033d5d-f53a-4390-9395-da7ba70764d8.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -36078,7 +36078,23 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\fbe57015-8d96-4953-956c-f183fdf33b91.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\b4033d5d-f53a-4390-9395-da7ba70764d8.pdf))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\f7f50392-0586-4d90-9bfa-b9f1d593544a.pdf))">
+      <SourceType>Package</SourceType>
+      <SourceId>brainX</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/brainX</BasePath>
+      <RelativePath>uploads/notes/f7f50392-0586-4d90-9bfa-b9f1d593544a.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\notes\f7f50392-0586-4d90-9bfa-b9f1d593544a.pdf))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

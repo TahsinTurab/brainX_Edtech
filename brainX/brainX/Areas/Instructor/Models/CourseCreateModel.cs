@@ -9,6 +9,7 @@ namespace brainX.Areas.Instructor.Models
     {
         [Required(ErrorMessage = "Title must be provided")]
         public string Title { get; set; }
+        public Guid Id { get; set; }
         public string Description { get; set; }
         public string Category { get; set; }
         public string ThumbnailUrl { get; set; }
