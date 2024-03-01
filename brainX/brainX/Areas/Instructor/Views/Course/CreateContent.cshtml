@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Create Content";
-    var emailCount = 1;
+    var emailCount = 0;
     // if (Model.ContentNames != null)
     // {
     //     emailCount = Model.ContentNames.Count;
@@ -166,7 +166,7 @@
                     <div class="row">
                         <!-- ./col -->
                         <div class="col-11 col-md-11">
-                            <input type="text" class="form-control" name="ContentNames" asp-for="ContentNames[i-1]" placeholder="Enter Content Name">
+                            <input type="text" class="form-control" name="ContentNames" asp-for="ContentNames[i-1]" placeholder="Enter Content Name" required>
                         </div>
                         <!-- ./col -->
                     </div>
@@ -177,7 +177,7 @@
                             <label>Upload Video</label>
                         </div>
                         <div class="col-5 col-md-5">
-                            <input name="VideoFiles" asp-for="VideoFiles[i-1]" type="file"/>
+                            <input name="VideoFiles" asp-for="VideoFiles[i-1]" type="file" />
                         </div>
                         <!-- ./col -->
                     </div>
@@ -187,7 +187,7 @@
                             <label>Upload Note</label>
                         </div>
                         <div class="col-5 col-md-5">
-                            <input name="NoteFiles" asp-for="NoteFiles[i-1]" type="file" />
+                                    <input name="NoteFiles" asp-for="NoteFiles[i-1]" type="file"  />
                         </div>
                         <!-- ./col -->
                     </div>

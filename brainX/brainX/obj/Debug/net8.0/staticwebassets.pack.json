@@ -8961,6 +8961,62 @@
       "PackagePath": "staticwebassets\\lib\\wow\\wow.min.js"
     },
     {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\01f97852-f27b-4882-927f-fc21dbbd5560.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\img\\01f97852-f27b-4882-927f-fc21dbbd5560.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\16f02c6f-eb0e-4c72-a1ee-b1abd9998242.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\img\\16f02c6f-eb0e-4c72-a1ee-b1abd9998242.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\54356644-16e1-4e62-8358-f9d13843466a.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\img\\54356644-16e1-4e62-8358-f9d13843466a.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\57da5616-363a-4bea-8fc8-0ebe6d27207e.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\img\\57da5616-363a-4bea-8fc8-0ebe6d27207e.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\6b0c2d31-bc10-41d7-a334-f699d10c4f72.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\img\\6b0c2d31-bc10-41d7-a334-f699d10c4f72.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\707c9061-2dfb-4163-aefa-7ccc1acb6ce5.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\img\\707c9061-2dfb-4163-aefa-7ccc1acb6ce5.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\d06174f8-4c8d-4018-8abc-742aeb3b77fd.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\img\\d06174f8-4c8d-4018-8abc-742aeb3b77fd.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\e1d669c6-f6b8-4ba1-8064-87bd538f7fdf.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\img\\e1d669c6-f6b8-4ba1-8064-87bd538f7fdf.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\f7fb7d5e-69bc-4866-9153-c75adfc146bb.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\img\\f7fb7d5e-69bc-4866-9153-c75adfc146bb.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\notes\\09f992ba-6110-4f4f-a4ec-acf36fe948c8.pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\09f992ba-6110-4f4f-a4ec-acf36fe948c8.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\notes\\a26ed767-9e24-4189-b889-8e7fedbbde7f.pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\a26ed767-9e24-4189-b889-8e7fedbbde7f.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\notes\\a9a553dd-1580-42f3-8ecb-889ee131d2b3.pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\a9a553dd-1580-42f3-8ecb-889ee131d2b3.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\notes\\cbd77526-2c1e-450e-8355-7a14fabd6738.pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\cbd77526-2c1e-450e-8355-7a14fabd6738.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\notes\\fbe57015-8d96-4953-956c-f183fdf33b91.pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\fbe57015-8d96-4953-956c-f183fdf33b91.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.brainX.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

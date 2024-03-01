@@ -11,5 +11,6 @@ namespace brainX.Repositories.Interface
         Task<bool> UpdateAsync(Course course);
         Task<List<string>> GetAllCategoriesAsync();
         Task<bool> CreateContentsAsync(ContentCreateModel contentCreateModel);
+        Task<ICollection<Course>> GetAllAsync(Guid id);
     }
 }

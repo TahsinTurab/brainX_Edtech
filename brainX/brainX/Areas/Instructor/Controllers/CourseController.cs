@@ -9,6 +9,7 @@ using brainX.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Shared;
 
 namespace brainX.Areas.Instructor.Controllers
@@ -30,12 +31,60 @@ namespace brainX.Areas.Instructor.Controllers
             _signInManager = signInManager;
             _courseRepository = courseRepository;
         }
-
-        [HttpGet]
-        public IActionResult Index()
+        
+        public async Task<IActionResult> IndexAsync(string message = null)
         {
-            return View();
+            var applicationUser = await _userManager.GetUserAsync(HttpContext.User);
+            ViewBag.Message = message;
+            if(message == "Your course has been created successfully.")
+            {
+                ViewBag.isOk = true;
+            }
+            else
+            {
+                ViewBag.isOk = false;
+            }
+            var model = new CourseViewModel();
+            model.CategoryList = await _courseRepository.GetAllCategoriesAsync();
+            var myCourses = (List<Course>)await _courseRepository.GetAllAsync(Guid.Parse(applicationUser.Id));
+            bool isCategory = false;
+
+            foreach (var category in model.CategoryList)
+            {
+                if(category == message)
+                {
+                    ViewBag.isOk = true;
+                    isCategory = true;
+                    break;
+                }
+            }
+
+            if (isCategory)
+            {
+                model.MyCourses = new List<Course>();
+                foreach (var courses in myCourses)
+                {
+                    if (courses.Category == message)
+                    {
+                        model.MyCourses.Add(courses);
+                    }
+                }
+            }
+            else
+            {
+                model.MyCourses = myCourses;
+            }
+
+            return View(model);
         }
+
+        //[HttpPost]
+        //public async Task<IActionResult> IndexAsync(string categoryName,)
+        //{
+        //    var model = new CourseViewModel();
+        //    model.CategoryList = await _courseRepository.GetAllCategoriesAsync();
+        //    return View();
+        //}
 
         [HttpGet]
         public async Task<IActionResult> Create()
@@ -84,25 +133,34 @@ namespace brainX.Areas.Instructor.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateContent(ContentCreateModel contentModel)
         {
-            var Message = "Please provide contents by following the guidelines.";
+            var Message = "Please provide contents by following the guidelines. You can add contents by click update course.";
             try
             {
+                if(contentModel.ContentNames==null)  return RedirectToAction("Index", new { message = Message });
+
                 var result = await _courseRepository.CreateContentsAsync(contentModel);
                 if(result == true)
                 {
-                    return RedirectToAction("Index");
+                    Message = "Your course has been created successfully.";
+                    return RedirectToAction("Index", new { message = Message });
                 }
                 else
                 {
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", new { message = Message });
                     //return RedirectToAction("UpdateContent", new { id = courseId, message = Message });
                 }
             }
             catch
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { message = Message });
                 //return RedirectToAction("UpdateContent", new { id = courseId, message = Message });
             }
+        }
+
+        public async Task<IActionResult> Update(Guid Id)
+        {
+            ViewBag.Id = Id;
+            return View();
         }
     }
 }

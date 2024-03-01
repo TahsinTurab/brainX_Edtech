@@ -58,9 +58,25 @@ namespace brainX.Repositories.Implementation
             return course.Id.ToString();
         }
 
-        public Task<ICollection<Course>> GetAllAsync()
+        public async Task<ICollection<Course>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var dbCourseList = await _dbContext.Courses.ToListAsync();
+            return dbCourseList;
+        }
+
+        public async Task<ICollection<Course>> GetAllAsync(Guid id)
+        {
+            var courseList = await GetAllAsync();
+            var myCourses = new List<Course>();
+            foreach (var course in courseList)
+            {
+                if(course.InstructorId == id)
+                {
+                    myCourses.Add(course);
+                }
+            }
+            return myCourses;
+            
         }
 
         public Task<bool> GetbyIdAsync(Guid id)
@@ -86,16 +102,18 @@ namespace brainX.Repositories.Implementation
                 var tempContent = new ContentCreateModel();
                 tempContent.CourseId = contentCreateModel.CourseId;
                 tempContent.ContentName = contentCreateModel.ContentNames[i];
-                if (contentCreateModel.VideoFiles[i] != null)
+                if (contentCreateModel.VideoFiles!=null && contentCreateModel.VideoFiles.Count>=i && contentCreateModel.VideoFiles[i] == null)
                 {
                     var result = _fileService.SaveVideo(contentCreateModel.VideoFiles[i]);
                     tempContent.VideoUrl = result.Item2;
                 }
-                if (contentCreateModel.NoteFiles[i] != null)
+                
+                if (contentCreateModel.NoteFiles != null && contentCreateModel.NoteFiles.Count >= i && contentCreateModel.NoteFiles[i] != null)
                 {
                     var result = _fileService.SaveNote(contentCreateModel.NoteFiles[i]);
                     tempContent.NoteUrl = result.Item2;
                 }
+                
                 var content = _mapper.Map<Content>(tempContent);
                 content.Id = Guid.NewGuid();
                 await _dbContext.Contents.AddAsync(content);
