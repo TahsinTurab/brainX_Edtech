@@ -21,12 +21,16 @@ namespace brainX.Areas.Identity.Pages.Account
     public class LoginModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<ApplicationUser> signInManager,
+            ILogger<LoginModel> logger,
+            UserManager<ApplicationUser> userManager)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _userManager = userManager;
         }
 
         /// <summary>
@@ -116,8 +120,23 @@ namespace brainX.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    var user = await _userManager.GetUserAsync(HttpContext.User);
+                    var userRoles = await _userManager.GetRolesAsync(user);
                     //return LocalRedirect(returnUrl);
-                    return RedirectToAction("Index", "Home", new {area = "Instructor"});
+                    foreach(var userRole in userRoles)
+                    {
+                        if(userRole == "Instructor")
+                        {
+                            return RedirectToAction("Index", "Home", new { area = "Instructor" });
+
+                        }
+                        else if(userRole == "Student")
+                        {
+                            return RedirectToAction("Index", "Home", new { area = "Student" });
+
+                        }
+                    }
+                    //return RedirectToAction("Index", "Home", new {area = "Instructor"});
                 }
                 if (result.RequiresTwoFactor)
                 {

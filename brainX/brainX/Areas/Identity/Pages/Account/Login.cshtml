@@ -19,10 +19,14 @@
             <div class="card-header">
                 <a href="#" class="h1"><b>@ViewData["Title"] </b></a>
             </div>
+            <div>
+
+            </div>
             <div class="card-body">
                 <p class="login-box-msg">Log in to start your session</p>
 
                 <form id="account" method="post" asp-validation-summary="ModelOnly" class="text-danger" role="alert">
+                    <div asp-validation-summary="All" class="text-danger"></div>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                     <div class="input-group mb-3">
                         <input class="form-control" asp-for="Input.Email"

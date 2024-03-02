@@ -164,8 +164,15 @@ namespace brainX.Areas.Identity.Pages.Account
                     else
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
-                        //return LocalRedirect(returnUrl);
-                        return RedirectToAction("Index", "Home", new { area = "Instructor" });
+                        if (Input.Role == "student")
+                        {
+                            return RedirectToAction("Index", "Home", new { area = "Student" });
+                        }
+                        else if (Input.Role == "instructor")
+                        {
+                            return RedirectToAction("Index", "Home", new { area = "Instructor" });
+                        }
+                        
                     }
                 }
                 foreach (var error in result.Errors)
