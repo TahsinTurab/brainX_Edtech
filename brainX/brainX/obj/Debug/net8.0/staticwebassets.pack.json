@@ -8569,6 +8569,10 @@
       "PackagePath": "staticwebassets\\img\\about.jpg"
     },
     {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\img\\card.png",
+      "PackagePath": "staticwebassets\\img\\card.png"
+    },
+    {
       "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\img\\carousel-1.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-1.jpg"
     },
@@ -8605,6 +8609,10 @@
       "PackagePath": "staticwebassets\\img\\course-3.jpg"
     },
     {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\img\\cross.png",
+      "PackagePath": "staticwebassets\\img\\cross.png"
+    },
+    {
       "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\img\\elearning-html-template.jpg",
       "PackagePath": "staticwebassets\\img\\elearning-html-template.jpg"
     },
@@ -8615,6 +8623,18 @@
     {
       "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\img\\hero-2.jpg",
       "PackagePath": "staticwebassets\\img\\hero-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\img\\mobile-banking.png",
+      "PackagePath": "staticwebassets\\img\\mobile-banking.png"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\img\\right.gif",
+      "PackagePath": "staticwebassets\\img\\right.gif"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\img\\right.png",
+      "PackagePath": "staticwebassets\\img\\right.png"
     },
     {
       "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\img\\team-1.jpg",
@@ -8959,6 +8979,14 @@
     {
       "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\lib\\wow\\wow.min.js",
       "PackagePath": "staticwebassets\\lib\\wow\\wow.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\03db8c37-9ce6-4de0-827c-a0903ff35e5c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\img\\03db8c37-9ce6-4de0-827c-a0903ff35e5c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\wwwroot\\uploads\\img\\336fa891-460d-4e14-ae63-733d6ea10ba5.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\img\\336fa891-460d-4e14-ae63-733d6ea10ba5.jpeg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.brainX.Microsoft.AspNetCore.StaticWebAssets.props",

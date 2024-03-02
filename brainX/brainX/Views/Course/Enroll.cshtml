@@ -1,0 +1,40 @@
+﻿@model CourseDetailsModel
+@{
+    ViewData["Title"] = "Enrollment Successful";
+}
+
+<br>
+<br>
+<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+    @if (ViewBag.isOk)
+    {
+        <img src="/img/right.png" width="200px" />
+        <br />
+        <br />
+        <h2>You have successfully enrolled to the course!</h2>
+    }
+    else
+    {
+        <img src="/img/cross.png" width="200px" />
+        <br />
+        <br />
+        <h2>Opps! There is an error, please try again</h2>
+    }
+
+</div>
+<div class="text-center wow fadeInUp" data-wow-delay="0.4s">
+    @if (ViewBag.isOk)
+    {
+        <a asp-area="Student" asp-controller="Course" asp-action="Index" class="btn btn-primary">
+            My Courses
+        </a>
+    }
+    else
+    {
+        <a asp-area="" asp-controller="Course" asp-action="Payment" class="btn btn-primary">
+            Back to payment
+        </a>
+    }
+
+</div>
+

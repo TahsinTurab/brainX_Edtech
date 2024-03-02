@@ -27,5 +27,24 @@ namespace brainX.Repositories.Implementation
             }
             return;
         }
+
+        public async Task<bool> EnrollCourseAsync(Guid studentId, Guid courseId)
+        {
+            try
+            {
+                var model = new StudentCourse();
+                model.Id = Guid.NewGuid();
+                model.CourseId = courseId;
+                model.StudentId = studentId;
+                await _dbContext.StudentCourses.AddAsync(model);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+        } 
     }
 }

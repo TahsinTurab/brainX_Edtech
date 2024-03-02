@@ -376,6 +376,55 @@ namespace brainX.Data.Migrations
                     b.ToTable("Instructors");
                 });
 
+            modelBuilder.Entity("brainX.Infrastructure.Domains.Notification", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notifications");
+                });
+
+            modelBuilder.Entity("brainX.Infrastructure.Domains.Review", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Reviewtext")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("brainX.Infrastructure.Domains.Student", b =>
                 {
                     b.Property<Guid>("Id")
@@ -389,6 +438,23 @@ namespace brainX.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("brainX.Infrastructure.Domains.StudentCourse", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StudentCourses");
                 });
 
             modelBuilder.Entity("CourseStudent", b =>
@@ -490,9 +556,30 @@ namespace brainX.Data.Migrations
                     b.Navigation("Instructor");
                 });
 
+            modelBuilder.Entity("brainX.Infrastructure.Domains.Review", b =>
+                {
+                    b.HasOne("brainX.Infrastructure.Domains.Course", "Course")
+                        .WithMany("Reviews")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("brainX.Infrastructure.Domains.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("brainX.Infrastructure.Domains.Course", b =>
                 {
                     b.Navigation("Contents");
+
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("brainX.Infrastructure.Domains.Instructor", b =>

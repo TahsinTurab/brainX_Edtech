@@ -3,9 +3,11 @@ using brainX.Areas.Instructor.Models;
 using brainX.Data;
 using brainX.Infrastructure.Domains;
 using brainX.Infrastructure.Services;
+using brainX.Models;
 using brainX.Repositories.Interface;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace brainX.Repositories.Implementation
 {
@@ -14,12 +16,16 @@ namespace brainX.Repositories.Implementation
         private readonly ApplicationDbContext _dbContext;
         private readonly IMapper _mapper;
         private readonly IFileService _fileService;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public CourseRepository(ApplicationDbContext dbContext, IMapper mapper, IFileService fileService)
+        public CourseRepository(ApplicationDbContext dbContext, 
+            IMapper mapper, UserManager<ApplicationUser> userManager,
+            IFileService fileService)
         {
             _dbContext = dbContext;
             _mapper = mapper;
             _fileService = fileService;
+            _userManager = userManager;
         }
 
         public async Task<List<string>> GetAllCategoriesAsync()
@@ -89,6 +95,18 @@ namespace brainX.Repositories.Implementation
             }
             return myCourses;
             
+        }
+
+        public async Task<IList<Course>> GetAllCourseOfStudentAsync(Guid id)
+        {
+            var studentCourses = await _dbContext.StudentCourses.Where(p => p.StudentId == id).ToListAsync();
+            var allCourses = new List<Course>();
+            foreach(var c in studentCourses)
+            {
+                var course = await _dbContext.Courses.FirstOrDefaultAsync(e => e.Id == c.CourseId);
+                allCourses.Add(course);
+            }
+            return allCourses;
         }
 
         public Task<bool> GetbyIdAsync(Guid id)
@@ -210,6 +228,44 @@ namespace brainX.Repositories.Implementation
                 return false;
             }
             
+        }
+
+        public async Task<CourseDetailsModel> GetCourseDetailsbyId(Guid Id)
+        {
+            var course = await _dbContext.Courses.FirstOrDefaultAsync(e => e.Id == Id);
+            var courseDetails = _mapper.Map<CourseDetailsModel>(course);
+            var instructor = await _userManager.FindByIdAsync(course.InstructorId.ToString());
+            courseDetails.InstructorName = instructor.FirstName + " " + instructor.LastName;
+            courseDetails.InstructorId = instructor.Id;
+            courseDetails.InstructorImageUrl = instructor.ImageUrl;
+
+            var allContents = await _dbContext.Contents.OrderBy(item => item.ContentNo).ToListAsync();
+            courseDetails.ContentsList = new List<string>();
+            foreach (var content in allContents)
+            {
+                if (content.CourseId == Id)
+                {
+                    courseDetails.ContentsList.Add(content.ContentName);
+                }
+            }
+            courseDetails.Students = 0;
+            var studentCourses = await _dbContext.StudentCourses.Where(p => p.CourseId == Id).ToListAsync();
+
+            if (studentCourses != null)
+            {
+                courseDetails.Students = studentCourses.Count;
+            }
+
+            if(course.Reviews != null)
+            {
+                foreach (var review in courseDetails.Reviews)
+                {
+                    courseDetails.AverageRating += review.Rating;
+                }
+                courseDetails.AverageRating /= courseDetails.Reviews.Count;
+            }
+
+            return courseDetails;
         }
 
     }

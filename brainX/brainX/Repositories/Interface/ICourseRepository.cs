@@ -1,5 +1,6 @@
 ﻿using brainX.Areas.Instructor.Models;
 using brainX.Infrastructure.Domains;
+using brainX.Models;
 
 namespace brainX.Repositories.Interface
 {
@@ -15,6 +16,8 @@ namespace brainX.Repositories.Interface
         Task<CourseCreateModel> GetCourseByIdAsync(Guid id);
         Task<ContentUpdateModel> GetContentsOfCourseById(Guid Id);
         Task<bool> UpdateContentAsync(ContentUpdateModel contentUpdateModel);
+        Task<CourseDetailsModel> GetCourseDetailsbyId(Guid Id);
+        Task<IList<Course>> GetAllCourseOfStudentAsync(Guid id);
 
     }
 }

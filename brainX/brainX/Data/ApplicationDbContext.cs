@@ -16,5 +16,8 @@ namespace brainX.Data
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<StudentCourse> StudentCourses { get; set; }
     }
 }

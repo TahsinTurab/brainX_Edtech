@@ -21,5 +21,6 @@ namespace brainX.Infrastructure.Domains
         public Guid InstructorId { get; set; }
         public ICollection<Content> Contents { get; set; }
         public IList<Student> Students { get; set; }
+        public IList<Review> Reviews { get; set; }
     }
 }
