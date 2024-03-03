@@ -1,0 +1,108 @@
+﻿@model CourseLearnModel
+@{
+    ViewData["Title"] = "Course Materials";
+}
+
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-lg-3">
+            <div class="card card-primary card-outline">
+                <div class="course-item card bg-light d-flex flex-fill wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="position-relative overflow-hidden text-center">
+                        <img class="img-fluid" src="/uploads/img/@Model.Course.ThumbnailUrl" alt="">
+                    </div>
+                    <div class="text-center p-4 pb-0">
+                        <h5 class="mb-4">@Model.Course.Title</h5>
+
+                    </div>
+                    <div class="d-flex border-top">
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>@Model.Course.Duration Hrs</small>
+                        <small class="flex-fill text-center border-end py-2">@Model.Course.Difficulities</small>
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            @foreach(var content in Model.ContentsList)
+            {
+                <div class="card card-info card-outline">
+                    <div class="card-header">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <div class="time-label">
+                                <h3 class="card-title">Content No. @content.ContentNo: @content.ContentName</h3>
+                                &nbsp;<i class="fas fa-minus"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="card-body" style="display: none;">
+                        <div class="timeline">
+                            <!-- timeline time label -->
+                            <div class="time-label">
+                                <span class="bg-red">@content.ContentName</span>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-video bg-yellow"></i>
+
+                                <div class="timeline-item">
+
+                                    <h3 class="timeline-header"><a href="#">Video Tutorial</a></h3>
+
+                                    <div class="timeline-body">
+                                        @if (content.VideoUrl != null)
+                                        {
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <video class="embed-responsive-item" controls>
+                                                    <source src="/uploads/videos/@content.VideoUrl">
+                                                </video>
+                                               
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <h5>No video tutorial for this Content</h5>
+                                        }
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-book bg-yellow"></i>
+                                <div class="timeline-item">
+                                    <h3 class="timeline-header"><a href="#">Note</a></h3>
+                                    <div class="timeline-body">
+                                        @if (content.NoteUrl != null)
+                                        {
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <embed src="/uploads/notes/@content.NoteUrl" type="application/pdf" width="100%" height="600px" />
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <h5>No note for this Content</h5>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END timeline item -->
+                            <div>
+                                <i class="fas fa-clock bg-gray"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div><!-- /.container-fluid -->

@@ -82,6 +82,30 @@ namespace brainX.Repositories.Implementation
             return courseUpdateModel;
         }
 
+        public async Task<Course> GetCourseIdAsync(Guid id)
+        {
+            var course = await _dbContext.Courses.FirstOrDefaultAsync(e => e.Id == id);
+            return course;
+        }
+
+        public async Task<IList<Content>> GetAllContentsOfCourse(Guid id)
+        {
+            var contentList = new List<Content>();
+            var dbContents = await _dbContext.Contents.OrderBy(item => item.ContentNo).ToListAsync();
+            if (dbContents != null)
+            {
+                foreach (var content in dbContents)
+                {
+                    if (content.CourseId == id)
+                    {
+                        contentList.Add(content);
+                    }
+                }
+            }
+            
+            return contentList; ;
+        }
+
         public async Task<ICollection<Course>> GetAllAsync(Guid id)
         {
             var courseList = await GetAllAsync();
@@ -202,25 +226,35 @@ namespace brainX.Repositories.Implementation
 
         public async Task<bool> UpdateContentAsync(ContentUpdateModel contentUpdateModel)
         {
-            var contents = await GetContentsOfCourseById(contentUpdateModel.Id);
-            var dbContents = contents.oldContent;
             try
             {
-                for(int i = 0; i < dbContents.Count; i++)
+                var content = await _dbContext.Contents.FirstOrDefaultAsync(e => e.Id == contentUpdateModel.contentId);
+
+                if(content == null)
                 {
-                    dbContents[i].ContentName = contentUpdateModel.oldContent[i].ContentName;
-                    //if (contentUpdateModel.VideoFiles[i] != null)
-                    //{
-
-                    //}
-                    //if (contentUpdateModel.NoteFiles[i] != null)
-                    //{
-
-                    //}
-                    _dbContext.Update(dbContents);
-                    await _dbContext.SaveChangesAsync();
+                    return false;
                 }
-                
+
+                if(contentUpdateModel.ContentName != null)
+                {
+                    content.ContentName = contentUpdateModel.ContentName;
+                }
+
+                if(contentUpdateModel.VideoFiles != null)
+                {
+                    var result = _fileService.SaveVideo(contentUpdateModel.VideoFiles);
+                    content.VideoUrl = result.Item2;
+                }
+
+                if(contentUpdateModel.NoteFiles != null)
+                {
+                    var result = _fileService.SaveNote(contentUpdateModel.NoteFiles);
+                    content.NoteUrl = result.Item2;
+                }
+
+                _dbContext.Update(content);
+                await _dbContext.SaveChangesAsync();
+
                 return true;
             }
             catch

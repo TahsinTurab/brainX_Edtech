@@ -45,7 +45,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Instructor\Data\" />
-    <Folder Include="Areas\Student\Models\" />
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 

@@ -1,5 +1,4 @@
 ﻿@model ContentUpdateModel;
-
 @{
     ViewData["Title"] = "Update Content";
     var totalCount = 0;
@@ -17,8 +16,6 @@
         <div class="col-6">
             <h3>@ViewData["Title"]</h3>
         </div>
-        <div class="col-6">
-        </div>
     </div>
 </div>
 @if (!String.IsNullOrEmpty(ViewBag.Message))
@@ -33,122 +30,114 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <!-- Column -->
-            <div class="col-12">
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-header p-2">
-                        <div class="card-title"><a class="nav-link">Update Contents</a></div>
-                        <a class="btn btn-primary float-right" asp-action="Update" asp-controller="Course" asp-area="instructor" asp-route-id="@Model.Id" asp-route-message=@null>
+            <div class="card col-lg-9 col-md-9  ">
+                <div class="card-header p-2">
+                    <div class="float-right">
+                        <a class="btn bg-gradient-primary btn-flat" asp-action="Update" asp-controller="Course" asp-area="instructor" asp-route-id="@Model.Id" asp-route-message=@null>
                             Update Course
-                        </a> &nbsp;
-                        <a type="button" id="addMemberBtn" class="btn bg-gradient-info btn-flat float-right"
-                            asp-area="Instructor" asp-controller="Course" asp-action="CreateContent" asp-route-id="@Model.Id">
-                            <b> Add more content</b>
                         </a>
-                        
-                    </div><!-- /.card-header -->
-                    <div class="card-body">
-                        <div class="tab-content">
-                            <input type="hidden" name="Id" asp-for="Id" value="@Model.Id" />
-                            <div class="col-lg-12 col-md-12 col-sm-12" id="membersDiv">
-                                <div asp-validation-summary="All" class="text-danger"></div>
-                                @for (int i = 1; i <= totalCount; i++)
-                                {
-                                    <input type="hidden" asp-for="contentId" value="@Model.oldContent[i-1].Id"/>
-                                    <div class="card">
-                                        <div class="row mt-60 card-body">
-                                            <div class="col-10 col-md-10">
-                                                <div class="row">
-                                                    <div class="col-5 col-md-5">
-                                                        <h5 class="emailSerial">Content @Model.oldContent[i-1].ContentNo</h5>
-                                                    </div>
-                                                </div>
-                                                <label>Content Name</label>
-                                                <div class="row">
-                                                    <!-- ./col -->
-                                                    <div class="col-11 col-md-11">
-                                                        <input type="text" class="form-control" asp-for="@Model.oldContent[i-1].ContentName">
-                                                    </div>
-                                                    <!-- ./col -->
-                                                </div>
-                                                <br />
-                                                <label>Serial Number</label>
-                                                <div class="row">
-                                                    <!-- ./col -->
-                                                    <div class="col-11 col-md-11">
-                                                        <input type="number" class="form-control" asp-for="@Model.oldContent[i-1].ContentNo">
-                                                    </div>
-                                                    <!-- ./col -->
-                                                </div>
-                                                
-                                                <div class="row">
-                                                    <!-- ./col -->
-                                                    
-                                                    <div class="col-5 col-md-5">
-                                                        &nbsp;<label>Change Video :</label>
-                                                        &nbsp;<input asp-value="" name="VideoFiles" asp-for="VideoFiles" type="file" />
-                                                    </div>
-                                                    <div class="col-3 col-md-5">
-                                                        @if (Model.oldContent[i - 1].VideoUrl != null)
-                                                        {
-                                                            <video width="100%" height="300px" controls>
-                                                                <source src="/uploads/videos/@Model.oldContent[i-1].VideoUrl">
-                                                            </video>
-                                                        }
-                                                    </div>
-                                                    <!-- ./col -->
-                                                </div>
-                                                <div class="row">
-                                                    <!-- ./col -->
-                                                    
-                                                    <div class="col-5 col-md-5">
-                                                        &nbsp;<label>Change Note :</label>
-                                                        &nbsp;<input name="NoteFiles" asp-for="NoteFiles" type="file"/>
-                                                    </div>
-                                                    <div class="col-3 col-md-5">
-                                                        @if (Model.oldContent[i - 1].NoteUrl != null)
-                                                        {
-                                                            <embed src="/uploads/notes/@Model.oldContent[i-1].NoteUrl" type="application/pdf" width="100%" height="300px" />
-                                                        }
+                        &nbsp;
+                        <a type="button" id="addMemberBtn" class="btn bg-gradient-info btn-flat"
+                           asp-area="Instructor" asp-controller="Course" asp-action="CreateContent" asp-route-id="@Model.Id">
+                            Add more content
+                        </a>
+                    </div>
+                </div><!-- /.card-header -->
+            </div>
+            <div class="col-md-9 col-lg-9">
+                @foreach (var content in Model.oldContent)
+                {
+                    <form asp-antiforgery="true" asp-area="Instructor" asp-controller="Course" asp-action="UpdateContent" method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="contentId" value="@content.Id" />
+                        <div class="card card-info card-outline">
+                            <div class="card-header">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <div class="time-label">
+                                        <h3 class="card-title">Content No. @content.ContentNo: @content.ContentName</h3>
+                                        &nbsp;<i class="fas fa-minus"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="card-body" style="display: none;">
+                                <div class="timeline">
+                                    <!-- timeline time label -->
+                                    <div class="time-label">
+                                        <span class="bg-red">@content.ContentName</span>
+                                        <span><input type="text" class="form-control" asp-for="ContentName" placeholder="Enter New Content Name" autocomplete="@null"></span>
+                                        <span asp-validation-for="ContentName"></span>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-video bg-yellow"></i>
+
+                                        <div class="timeline-item">
+
+                                            <h3 class="timeline-header"><a href="#">Video Tutorial</a></h3>
+                                            <span><input asp-value="@null" name="VideoFiles" asp-for="VideoFiles" type="file" autocomplete="@null"/></span>
+
+                                            <div class="timeline-body">
+                                                @if (content.VideoUrl != null)
+                                                {
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <video class="embed-responsive-item" controls>
+                                                            <source src="/uploads/videos/@content.VideoUrl">
+                                                        </video>
 
                                                     </div>
-                                                    <!-- ./col -->
-                                                </div>
-                                                <div class="row">
-                                                    <a type="button" id="addMemberBtn" class="btn bg-gradient-info btn-flat float-right"
-                                                        asp-area="Instructor" asp-controller="Course" asp-action="UpdateContent" asp-route-contentUpdateModel="@Model">
-                                                        <b> Save Changes</b>
-                                                    </a>
-                                                </div>
+                                                }
+                                                else
+                                                {
+                                                    <h5>No video tutorial for this Content</h5>
+                                                }
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-book bg-yellow"></i>
+                                        <div class="timeline-item">
+                                            <h3 class="timeline-header"><a href="#">Note</a></h3>
+                                            <span><input name="NoteFiles" asp-value="@null" asp-for="NoteFiles" type="file" autocomplete="@null" /></span>
+                                            <div class="timeline-body">
+                                                @if (content.NoteUrl != null)
+                                                {
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <embed src="/uploads/notes/@content.NoteUrl" type="application/pdf" width="100%" height="600px" />
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <h5>No note for this Content</h5>
+                                                }
+
                                             </div>
                                         </div>
-                                        <!-- /.row -->
                                     </div>
-                                }
+                                    <!-- END timeline item -->
+                                    <div class="timeline-footer text-center">
+                                        <button type="submit" class="btn btn-sm bg-yellow">Update Content</button>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-clock bg-gray"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!-- /.tab-content -->
-                    </div><!-- /.card-body -->
-                </div>
-                <!-- /.card -->
+                    </form>
+                }
+
             </div>
-            <!-- /.column -->
+            <!-- /.col -->
         </div>
-        <!-- /.row -->
-    </div>
+            <!-- /.row -->
+    </div><!-- /.container-fluid -->
     <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
 @section Scripts
 {
     <partial name="_ValidationScriptsPartial" />
-    <script>
-        // Set the value of the file input element after the page has loaded
-        window.onload = function () {
-            var videoInput = document.getElementById('videoInput');
-            videoInput.value = null;
-        };
-    </script>
 }
 

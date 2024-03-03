@@ -1,4 +1,5 @@
 ﻿using brainX.Areas.Instructor.Models;
+using brainX.Areas.Student.Models;
 using brainX.Data;
 using brainX.Infrastructure.Domains;
 using brainX.Repositories.Interface;
@@ -63,7 +64,12 @@ namespace brainX.Areas.Student.Controllers
             return View(model);
         }
 
-        
-        
+        public async Task<IActionResult> Learn(Guid courseId)
+        {
+            var model = new CourseLearnModel();
+            model.Course = await _courseRepository.GetCourseIdAsync(courseId);
+            model.ContentsList = await _courseRepository.GetAllContentsOfCourse(courseId);
+            return View(model);
+        }
     }
 }

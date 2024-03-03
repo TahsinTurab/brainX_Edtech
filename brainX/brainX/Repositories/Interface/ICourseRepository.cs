@@ -18,6 +18,8 @@ namespace brainX.Repositories.Interface
         Task<bool> UpdateContentAsync(ContentUpdateModel contentUpdateModel);
         Task<CourseDetailsModel> GetCourseDetailsbyId(Guid Id);
         Task<IList<Course>> GetAllCourseOfStudentAsync(Guid id);
+        Task<IList<Content>> GetAllContentsOfCourse(Guid id);
+        Task<Course> GetCourseIdAsync(Guid id);
 
     }
 }

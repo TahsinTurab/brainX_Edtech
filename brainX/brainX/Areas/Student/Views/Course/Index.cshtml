@@ -66,7 +66,7 @@
                         {
                             <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="course-item card bg-light d-flex flex-fill">
-                                    <div class="position-relative overflow-hidden">
+                                    <div class="position-relative overflow-hidden text-center">
                                         <img class="img-fluid" src="/uploads/img/@course.ThumbnailUrl" alt="">
                                     </div>
                                     <div class="text-center p-4 pb-0">
@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="card-footer">
                                         <div class="text-right">
-                                            <a asp-area="Student" asp-controller="Course" asp-action="Learn" asp-route-id="@course.Id" class="btn btn-primary">
+                                            <a asp-area="Student" asp-controller="Course" asp-action="Learn" asp-route-courseId="@course.Id" class="btn btn-primary">
                                                 Continue Learning &nbsp; <i class="fas fa-arrow-right"></i>
                                             </a>
                                         </div>

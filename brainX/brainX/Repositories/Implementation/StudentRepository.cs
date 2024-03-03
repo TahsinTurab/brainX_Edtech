@@ -36,7 +36,22 @@ namespace brainX.Repositories.Implementation
                 model.Id = Guid.NewGuid();
                 model.CourseId = courseId;
                 model.StudentId = studentId;
+                
+                var course = await _dbContext.Courses.FirstOrDefaultAsync(e => e.Id == courseId);
+                var instructorId = course.InstructorId;
+                var account = await _dbContext.Accounts.FirstOrDefaultAsync(e => e.InstructorId == instructorId);
+                if(account.TotalRevenue == null)
+                {
+                    account.TotalRevenue = 0;
+                }
+                account.TotalRevenue += course.Fee;
+                if (account.CurrentBalance == null)
+                {
+                    account.CurrentBalance = 0;
+                }
+                account.CurrentBalance += course.Fee;
                 await _dbContext.StudentCourses.AddAsync(model);
+                _dbContext.Update(account);
                 await _dbContext.SaveChangesAsync();
                 return true;
             }

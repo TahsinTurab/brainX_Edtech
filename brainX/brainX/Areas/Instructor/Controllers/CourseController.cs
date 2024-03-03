@@ -180,14 +180,14 @@ namespace brainX.Areas.Instructor.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateContent(ContentUpdateModel contentUpdateModel)
         {
-            //var result = await _courseRepository.UpdateContentAsync(contentUpdateModel);
+            var result = await _courseRepository.UpdateContentAsync(contentUpdateModel);
             ViewBag.isOk = false;
             string Message = "Course Content didn't Updated!";
-            //if (result == true)
-            //{
-            //    ViewBag.isOk = true;
-            //    Message = "Your Course Content Updated Successfully";
-            //}
+            if (result == true)
+            {
+                ViewBag.isOk = true;
+                Message = "Your Course Content Updated Successfully";
+            }
             return RedirectToAction("UpdateContent", new { Id = contentUpdateModel.Id, message = Message });
         }
 
