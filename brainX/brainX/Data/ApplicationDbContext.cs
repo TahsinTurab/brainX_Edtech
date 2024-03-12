@@ -19,5 +19,7 @@ namespace brainX.Data
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<StudentCourse> StudentCourses { get; set; }
+        public DbSet<CommunityQuestion> Questions { get; set; }
+        public DbSet<CommunityAnswer> Answers { get; set; }
     }
 }

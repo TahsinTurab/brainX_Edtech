@@ -70,27 +70,30 @@ namespace brainX.Controllers
         public async Task<IActionResult> Details(Guid id)
         {
             var applicationUser = await _userManager.GetUserAsync(HttpContext.User);
-            var roles = await _userManager.GetRolesAsync(applicationUser);
-            foreach(var role in roles)
+            if (applicationUser != null)
             {
-                if (role == "Student")
+                var roles = await _userManager.GetRolesAsync(applicationUser);
+                foreach (var role in roles)
                 {
-                    var courseList = await _dbContext.StudentCourses.ToListAsync();
-                    foreach (var c in courseList)
+                    if (role == "Student")
                     {
-                        if (c.CourseId == id && c.StudentId == Guid.Parse(applicationUser.Id))
+                        var courseList = await _dbContext.StudentCourses.ToListAsync();
+                        foreach (var c in courseList)
                         {
-                            return RedirectToAction("Learn", "Course", new { area = "Student", courseId = id });
+                            if (c.CourseId == id && c.StudentId == Guid.Parse(applicationUser.Id))
+                            {
+                                return RedirectToAction("Learn", "Course", new { area = "Student", courseId = id });
+                            }
                         }
                     }
-                }
 
-                else if(role == "Instructor")
-                {
-                    var course = await _dbContext.Courses.FirstOrDefaultAsync(e => e.Id == id);
-                    if(course.InstructorId == Guid.Parse(applicationUser.Id))
+                    else if (role == "Instructor")
                     {
-                        return RedirectToAction("Update", "Course", new { area = "Instructor", id = id });
+                        var course = await _dbContext.Courses.FirstOrDefaultAsync(e => e.Id == id);
+                        if (course.InstructorId == Guid.Parse(applicationUser.Id))
+                        {
+                            return RedirectToAction("Update", "Course", new { area = "Instructor", id = id });
+                        }
                     }
                 }
             }
