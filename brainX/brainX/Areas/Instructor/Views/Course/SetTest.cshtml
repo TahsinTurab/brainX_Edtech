@@ -1,0 +1,81 @@
+﻿@model TestCreateModel
+@{
+    ViewData["Title"] = "Create Test's Questions";
+}
+<br />
+<br />
+<div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-6">
+            <h3>@ViewData["Title"]</h3>
+        </div>
+        <div class="col-6">
+        </div>
+    </div>
+</div>
+<partial name="_StatusMessage" for="StatusMessage" />
+<div class="row">
+    <!-- Column -->
+    <div class="col-12">
+        <!-- Card -->
+        <div class="card">
+            <div class="card-header p-2">
+                <h3 class="card-title mr-10 ml-20 mt-10">1. General Information</h3>
+                <div class="card-title"><a class="nav-link" style="pointer-events: none">2. Quizes</a></div>
+            </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="card card-info">
+                        <!-- form start -->
+                        <form class="form-horizontal" method="post" asp-antiforgery="true" asp-action="SetTest" asp-controller="Course" asp-area="Instructor" enctype="multipart/form-data">
+                            <input type="hidden" class="form-control" asp-for="CourseId" value="@Model.CourseId">
+                            <div class="card-body">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="form-group row" style="padding-bottom: 12px;">
+                                    <label class="col-sm-2 col-form-label" asp-for="Name">Test Title</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" asp-for="Name" placeholder="Test Title" required>
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row" style="padding-bottom: 12px;">
+                                    <label class="col-sm-2 col-form-label" asp-for="TotalTime">Total Duration</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" asp-for="TotalTime" placeholder="minuites" required>
+                                        <span asp-validation-for="TotalTime" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row" style="padding-bottom: 12px;">
+                                    <label class="col-sm-2 col-form-label" asp-for="QuizTime">Quiz Time</label>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" asp-for="QuizTime" placeholder="minuites" required>
+                                        <span asp-validation-for="QuizTime" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row" style="padding-bottom: 12px;">
+                                    <label class="col-sm-2 col-form-label" asp-for="PracticalTaskFile">Practical Task File</label>
+                                    <div class="col-sm-4">
+                                        <input asp-for="PracticalTaskFile" required />
+                                        <span asp-validation-for="PracticalTaskFile" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-success float-right" style="margin-left: 26px;">Save Test</button>
+                                    <button class="btn btn-default float-right" type="reset" value="Reset"
+                                            onclick="location.href='@Url.Action("SetTest", "Course", new { Area = "Instructor" })'">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.tab-content -->
+            </div><!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.column -->
+</div>
+<!-- /.row -->

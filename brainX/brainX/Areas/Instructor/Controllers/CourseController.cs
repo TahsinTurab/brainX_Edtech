@@ -191,6 +191,17 @@ namespace brainX.Areas.Instructor.Controllers
             return RedirectToAction("UpdateContent", new { Id = contentUpdateModel.Id, message = Message });
         }
 
+        public async Task<IActionResult> SetTest (Guid Id)
+        {
+            var model = new TestCreateModel();
+            model.CourseId = Id;
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> SetTest(TestCreateModel testCreateModel)
+        {
+            return View();
+        }
 
         public async Task<IActionResult> Delete(Guid Id)
         {

@@ -34,13 +34,17 @@
                 <h3 class="card-title mr-10 ml-20 mt-10">Update General Information</h3>
                 <div class="float-right">
                     <a class="btn btn-primary " asp-action="UpdateContent" asp-controller="Course" asp-area="instructor" asp-route-id="@Model.Id" asp-route-message=@null>
-
-                        Update Contents
+                         Update Contents
                     </a>
                     &nbsp;
                     <a type="button" id="addMemberBtn" class="btn bg-gradient-info btn-flat"
                        asp-area="Instructor" asp-controller="Course" asp-action="CreateContent" asp-route-id="@Model.Id">
                         Add more content
+                    </a>
+                    &nbsp;
+                    <a type="button" id="addMemberBtn" class="btn bg-gradient-info btn-flat"
+                       asp-area="Instructor" asp-controller="Course" asp-action="SetTest" asp-route-id="@Model.Id">
+                        Set Questions
                     </a>
                 </div>
                 
