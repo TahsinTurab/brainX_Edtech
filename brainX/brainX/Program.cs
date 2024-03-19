@@ -28,6 +28,7 @@ builder.Services.AddScoped<IFileService,FileService>();
 builder.Services.AddScoped<IInstructorRepository, InstructorRepository>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<ICommunityRespsitory, CommunityRespsitory>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

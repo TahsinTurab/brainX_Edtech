@@ -328,6 +328,10 @@ namespace brainX.Data.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
@@ -489,6 +493,26 @@ namespace brainX.Data.Migrations
                     b.HasIndex("TestId");
 
                     b.ToTable("Quizes");
+                });
+
+            modelBuilder.Entity("brainX.Infrastructure.Domains.Reaction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("DownVote")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("ItemId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("UpVote")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reactions");
                 });
 
             modelBuilder.Entity("brainX.Infrastructure.Domains.Review", b =>
