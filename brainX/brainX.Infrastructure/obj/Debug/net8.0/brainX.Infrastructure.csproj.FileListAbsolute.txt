@@ -13,3 +13,18 @@ C:\Users\Tahsin Hasan Turab\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\o
 C:\Users\Tahsin Hasan Turab\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\ref\brainX.Infrastructure.dll
 C:\Users\Tahsin Hasan Turab\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\bin\Debug\net8.0\brainX.Infrastructure.runtimeconfig.json
 C:\Users\Tahsin Hasan Turab\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\brainX.Infrastructure.genruntimeconfig.cache
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\bin\Debug\net8.0\brainX.Infrastructure.deps.json
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\bin\Debug\net8.0\brainX.Infrastructure.runtimeconfig.json
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\bin\Debug\net8.0\brainX.Infrastructure.dll
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\bin\Debug\net8.0\brainX.Infrastructure.pdb
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\brainX.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\brainX.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\brainX.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\brainX.Infrastructure.AssemblyInfo.cs
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\brainX.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\brainX.Infrastructure.sourcelink.json
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\brainX.Infrastructure.dll
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\refint\brainX.Infrastructure.dll
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\brainX.Infrastructure.pdb
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\brainX.Infrastructure.genruntimeconfig.cache
+C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX.Infrastructure\obj\Debug\net8.0\ref\brainX.Infrastructure.dll

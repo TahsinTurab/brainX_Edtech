@@ -1,0 +1,150 @@
+﻿@model CommunityModel
+@{
+    ViewData["Title"] = "Answers";
+}
+
+<!-- Content Wrapper. Contains page content -->
+
+<div class="content-wrapper">
+    <div class="container">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>brainX Community</h1>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        @if (!String.IsNullOrEmpty(ViewBag.Status))
+        {
+            <div class="alert alert-success" role="alert">
+                <p>@ViewBag.Status</p>
+            </div>
+        }
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example2" class="table table-bordered table-hover">
+
+                                    <tbody>
+                                        <tr>
+                                            <!-- Post -->
+                                            <div class="post">
+                                                <div class="user-block">
+                                                    <img class="img-circle img-bordered-sm" src="/uploads/img/@Model.Question.UserPhotoUrl" alt="User Image">
+                                                    <span class="username">
+                                                        <a href="#">@Model.Question.UserName</a>
+                                                        <a href="#" class="float-right btn-tool"><i class="fas fa-times"> @Model.Question.DateTime</i></a>
+                                                    </span>
+                                                    <span class="description">
+                                                        <b>@Model.Question.Title</b><br />
+                                                        @Model.Question.Details
+                                                    </span>
+                                                </div>
+                                                <!-- /.user-block -->
+                                                @if (Model.Question.ImageUrl != null)
+                                                {
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-12">
+                                                            <img class="img-fluid" src="/uploads/img/@Model.Question.ImageUrl" alt="Photo">
+                                                        </div>
+                                                    </div>
+                                                }
+
+                                            </div>
+                                            <!-- /.post -->
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <form method="post" asp-antiforgery="true" asp-action="CreateAnswer" asp-controller="Community" asp-area="" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-outline card-info">
+                                <div class="card-body">
+                                    <input type="hidden" asp-for="QuestionId" value="@Model.Question.Id" />
+                                    <br /><textarea asp-for="Description" id="inputMessage" class="form-control" rows="4"></textarea>
+                                    <br /><input asp-for="Image" />
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- ./row -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example2" class="table table-bordered table-hover">
+
+                                    <tbody>
+                                        @foreach (var answer in Model.communityAnswers)
+                                        {
+                                            <tr>
+                                                <!-- Post -->
+                                                <div class="post">
+                                                    <div class="user-block">
+                                                        <img class="img-circle img-bordered-sm" src="/uploads/img/@answer.UserPhotoUrl" alt="User Image">
+                                                        <span class="username">
+                                                            <a href="#">@answer.UserName</a>
+                                                            <a href="#" class="float-right btn-tool"><i class="fas fa-times"> @answer.DateTime</i></a>
+                                                        </span>
+                                                        <span class="description">
+                                                            @answer.Reply
+                                                        </span>
+                                                    </div>
+                                                    @if (answer.ImageUrl != null)
+                                                    {
+                                                        <div class="row mb-3">
+                                                            <div class="col-sm-12">
+                                                                <img class="img-fluid" src="/uploads/img/@answer.ImageUrl" alt="Photo">
+                                                            </div>
+                                                        </div>
+                                                    }
+
+
+                                                </div>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</div>
+<!-- /.content-wrapper -->

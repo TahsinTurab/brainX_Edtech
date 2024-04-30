@@ -9527,19 +9527,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tahsin Hasan Turab\\.nuget\\packages\\": {}
+    "C:\\Users\\tahsi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\brainX.csproj",
+      "projectUniqueName": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\brainX.csproj",
       "projectName": "brainX",
-      "projectPath": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\brainX.csproj",
-      "packagesPath": "C:\\Users\\Tahsin Hasan Turab\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX\\obj\\",
+      "projectPath": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\brainX.csproj",
+      "packagesPath": "C:\\Users\\tahsi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Tahsin Hasan Turab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tahsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9553,8 +9558,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX.Infrastructure\\brainX.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Tahsin Hasan Turab\\Desktop\\brainX_Edtech\\brainX\\brainX.Infrastructure\\brainX.Infrastructure.csproj"
+            "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX.Infrastructure\\brainX.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX.Infrastructure\\brainX.Infrastructure.csproj"
             }
           }
         }
@@ -9563,6 +9568,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -9635,7 +9645,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

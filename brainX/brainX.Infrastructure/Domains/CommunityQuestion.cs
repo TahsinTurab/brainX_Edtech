@@ -15,5 +15,7 @@ namespace brainX.Infrastructure.Domains
         public bool isAnonymous { get; set; }
         public Guid? UserId { get; set; }
         public DateTime DateTime { get; set; }
+        public string UserName { get; set; }
+        public string? UserPhotoUrl { get; set; }
     }
 }

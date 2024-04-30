@@ -4,6 +4,7 @@ using brainX.Infrastructure.Domains;
 using brainX.Infrastructure.Services;
 using brainX.Models;
 using brainX.Repositories.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace brainX.Repositories.Implementation
 {
@@ -31,6 +32,17 @@ namespace brainX.Repositories.Implementation
                 Question.DateTime = DateTime.Now;
                 Question.UserId = userId;
                 Question.isAnonymous = isAnonymous;
+                if (Question.isAnonymous)
+                {
+                    Question.UserName = "Anonymous User";
+                    Question.UserPhotoUrl = null;
+                }
+                else
+                {
+                    Question.UserName = question.UserName;
+                    Question.UserPhotoUrl = question.UserPhotoUrl;
+                }
+                
                 if (question.Image != null)
                 {
                     var result = _fileService.SaveImage(question.Image);
@@ -47,14 +59,63 @@ namespace brainX.Repositories.Implementation
             }
         }
 
-        public Task<string> CreateAsync(CommunityAnswer answer, Guid userId, Guid questionId)
+        public async Task<bool> CreateAnswerAsync(CommunityModel answer, Guid userId, bool isAnonymous)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var Answer = new CommunityAnswer();
+                Answer.UserId = userId;
+                Answer.Reply = answer.Description;
+                Answer.DateTime = DateTime.Now;
+                Answer.UserId = userId;
+                Answer.QuestionId = answer.QuestionId;
+                if (isAnonymous)
+                {
+                    Answer.UserName = "Anonymous User";
+                    Answer.UserPhotoUrl = null;
+                }
+                else
+                {
+                    Answer.UserName = answer.UserName;
+                    Answer.UserPhotoUrl = answer.UserPhotoUrl;
+                }
+
+                if (answer.Image != null)
+                {
+                    var result = _fileService.SaveImage(answer.Image);
+                    Answer.ImageUrl = result.Item2;
+                }
+
+                await _dbContext.Answers.AddAsync(Answer);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public Task<ICollection<Course>> GetAllAsync()
+
+        public async Task<ICollection<CommunityQuestion>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var dbQuestionList = await _dbContext.Questions.ToListAsync();
+            return dbQuestionList;
+        }
+
+        
+        public async Task<ICollection<CommunityAnswer>> GetAllAnswersByIDAsync(Guid id)
+        {
+            var AnswerList = await _dbContext.Answers.ToListAsync();
+            var Answers = new List<CommunityAnswer>();
+            foreach(var answer in AnswerList)
+            {
+                if (answer.QuestionId == id)
+                {
+                    Answers.Add(answer);
+                }
+            }
+            return Answers;
         }
 
         public Task<bool> UpdateAsync(CommunityQuestion question)
@@ -65,6 +126,12 @@ namespace brainX.Repositories.Implementation
         public Task<bool> UpdateAsync(CommunityAnswer answer)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<CommunityQuestion> GetQuestionByIDAsync(Guid id)
+        {
+            var question = await _dbContext.Questions.FirstOrDefaultAsync(e => e.Id == id);
+            return question;
         }
     }
 }
