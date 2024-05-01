@@ -15,63 +15,173 @@
                 </div>
             </div><!-- /.container-fluid -->
         </section>
-        <section class="content">
-            <form method="post" asp-antiforgery="true" asp-action="TakeTest" asp-controller="Course" asp-area="Student" enctype="multipart/form-data">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card card-outline card-info">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    Problem Statement 01
-                                    <p>@Model.Test.PracticalTask01</p>
-                                </h3>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <textarea asp-for="Solution1" id="inputMessage" class="form-control" rows="8"></textarea>
-                            </div>
-                            
+        @if(Model.Test == null)
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-outline card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                There is no test for this course. 
+                            </h3>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card card-outline card-info">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    Problem Statement 02
-                                    <p>@Model.Test.PracticalTask02</p>
-                                </h3>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <textarea asp-for="Solution2" id="inputMessage" class="form-control" rows="8"></textarea>
-                            </div>
+            </div>
+        }
+        else if(Model.Attemp >= 3)
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-outline card-warning">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                You've crossed your test limit! Try again after 30 days.
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else{
 
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-outline card-warning">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <ul>
+                                    <li> Attemp No: @Model.Attemp</li>
+                                    <li> You will get total 3 attemp for the first time.</li>
+                                    <li> If you won't get passed, you will take the test after 30 days.</li>
+                                    <li> Don't close this tab, if you close is your solution will be submitted as null.</li>
+                                    <li> You will get total @Model.Test.TotalTime mins to submit your solution</li>
+                                    Good Luck!
+                                </ul>
+                            </h3>
                         </div>
+                        <button onclick="submitFormAfterDelay()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Start Test
+                        </button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card card-outline card-info">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    Problem Statement 03
-                                </h3>
-                                <p>@Model.Test.PracticalTask03</p>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <textarea asp-for="Solution2" id="inputMessage" class="form-control" rows="8"></textarea>
-                            </div>
+            </div>
+            
+            <!-- Button trigger modal -->
+            
 
-                        </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div id="countdown"></div>
+                        <section class="content">
+                            <form id="myForm" method="post" asp-antiforgery="true" asp-action="TakeTest" asp-controller="Course" asp-area="Student" enctype="multipart/form-data">
+                                <div class="row">
+                                    <input type="hidden" asp-for="@Model.Attemp" value="@Model.Attemp" />
+                                    <input type="hidden" asp-for="@Model.TestId" value="@Model.Test.Id" />
+                                    <input type="hidden" asp-for="@Model.InstructorId" value="@Model.Test.AuthorId" />
+                                    <input type="hidden" asp-for="@Model.StudentId" value="@Model.StudentId" />
+                                    <input type="hidden" asp-for="@Model.CourseId" value="@Model.CourseId" />
+                                    <div class="col-md-12">
+                                        <div class="card card-outline card-info">
+                                            <div class="card-header">
+                                                <h3 class="card-title">
+                                                    Problem Statement 01
+                                                    <p>@Model.Test.PracticalTask1</p>
+                                                </h3>
+                                            </div>
+                                            <!-- /.card-header -->
+                                            <div class="card-body">
+                                                <textarea asp-for="Solution1" id="inputMessage" class="form-control" rows="8"></textarea>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card card-outline card-info">
+                                            <div class="card-header">
+                                                <h3 class="card-title">
+                                                    Problem Statement 02
+                                                    <p>@Model.Test.PracticalTask2</p>
+                                                </h3>
+                                            </div>
+                                            <!-- /.card-header -->
+                                            <div class="card-body">
+                                                <textarea asp-for="Solution2" id="inputMessage" class="form-control" rows="8"></textarea>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card card-outline card-info">
+                                            <div class="card-header">
+                                                <h3 class="card-title">
+                                                    Problem Statement 03
+                                                </h3>
+                                                <p>@Model.Test.PracticalTask3</p>
+                                            </div>
+                                            <!-- /.card-header -->
+                                            <div class="card-body">
+                                                <textarea asp-for="Solution2" id="inputMessage" class="form-control" rows="8"></textarea>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </section>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
-        </section>
+            </div>
+            
+        }
     </div>
 </div>
+
+
+@section Scripts {
+    <script>
+        // Define your JavaScript function
+        function submitFormAfterDelay() {
+            setTimeout(function () {
+                // Reference your form and submit it
+                document.getElementById('myForm').submit();
+            }, @Model.Test.TotalTime * 60 * 1000); // Submit after 5 seconds (5000 milliseconds)
+
+            var durationInMinutes = @Model.Test.TotalTime; // Change this to your desired duration
+
+            // Calculate the end time
+            var endTime = new Date();
+            endTime.setMinutes(endTime.getMinutes() + durationInMinutes);
+
+            // Update the countdown every 1 second
+            var countdown = setInterval(function () {
+                // Get the current date and time
+                var now = new Date().getTime();
+
+                // Calculate the time remaining
+                var distance = endTime - now;
+                // Calculate minutes and seconds
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the countdown in the "countdown" div
+                document.getElementById("countdown").innerHTML = "Countdown: " + minutes + "m " + seconds + "s ";
+
+                // If the countdown is over, display a message
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        }
+    </script>
+}

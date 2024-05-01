@@ -12,12 +12,12 @@ namespace brainX.Infrastructure.Domains
         public Guid TestId { get; set; }
         public Guid InstructorId { get; set; }
         public Guid StudentId { get; set; }
-        public DateTime StartingDate { get; set; }
+        public DateTime? StartingDate { get; set; }
         public DateTime EndingDate { get; set;}
         public int Attemp { get; set; }
-        public string Solution1 { get; set; }
-        public string Solution2 { get; set; }
-        public string Solution3 { get; set; }
+        public string? Solution1 { get; set; }
+        public string? Solution2 { get; set; }
+        public string? Solution3 { get; set; }
         public string verdict { get; set; }
     }
 }

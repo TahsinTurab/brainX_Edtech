@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using brainX.Areas.Instructor.Models;
+using brainX.Areas.Student.Models;
 using brainX.Data;
 using brainX.Infrastructure.Domains;
 using brainX.Infrastructure.Services;
@@ -8,6 +9,7 @@ using brainX.Repositories.Interface;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace brainX.Repositories.Implementation
 {
@@ -319,6 +321,45 @@ namespace brainX.Repositories.Implementation
             test.PracticalTask3 = testCreateModel.PracticalTask3;
             
             await _dbContext.Tests.AddAsync(test);
+            await _dbContext.SaveChangesAsync();
+            return true;
+        }
+        public async Task<Test> GetTestByIdAsync(Guid Id)
+        {
+            var test = await _dbContext.Tests.FirstOrDefaultAsync(e => e.CourseId == Id);
+            return test;
+        }
+
+        public async Task<Solution> GetSolutionAsync(Guid TestId, Guid StudentId)
+        {
+            var dbSolutionList = await _dbContext.Solutions.ToListAsync();
+            dbSolutionList = dbSolutionList.OrderByDescending(obj => obj.EndingDate).ToList();
+
+            foreach (var sol in dbSolutionList)
+            {
+                if(sol.TestId == TestId && sol.StudentId == StudentId)
+                {
+                    return sol;
+                    break;
+                }
+            }
+            return null;
+        }
+
+        public async Task<bool> CreateSolutionAsync(TakeTestModel takeTestModel)
+        {
+            var solution = new Solution();
+            solution.Id = Guid.NewGuid();
+            solution.TestId = takeTestModel.TestId;
+            solution.InstructorId = takeTestModel.InstructorId;
+            solution.StudentId = takeTestModel.StudentId;
+            solution.EndingDate = DateTime.Now;
+            solution.Attemp = takeTestModel.Attemp;
+            solution.Solution1 = takeTestModel.Solution1;
+            solution.Solution2 = takeTestModel.Solution2;
+            solution.Solution3 = takeTestModel.Solution3;
+            solution.verdict = "Pending";
+            await _dbContext.Solutions.AddAsync(solution);
             await _dbContext.SaveChangesAsync();
             return true;
         }

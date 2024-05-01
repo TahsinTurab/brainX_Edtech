@@ -8,6 +8,7 @@ namespace brainX.Areas.Student.Models
         public Guid TestId { get; set; }
         public Guid InstructorId { get; set; }
         public Guid StudentId { get; set; }
+        public Guid CourseId { get; set; }
         public DateTime StartingDate { get; set; }
         public DateTime EndingDate { get; set; }
         public int Attemp { get; set; }

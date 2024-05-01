@@ -22,6 +22,13 @@
                         <small class="flex-fill text-center border-end py-2">@Model.Course.Difficulities</small>
                     </div>
                     <div class="card-footer">
+                        <h5>Test Result: @Model.TestResult</h5>
+                        @if(Model.TestResult != "Pending")
+                        {
+                            <a class="btn btn-primary " asp-action="TakeTest" asp-controller="Course" asp-area="student" asp-route-id="@Model.Course.Id">
+                                Take Test
+                            </a>
+                        }
                     </div>
                 </div>
             </div>

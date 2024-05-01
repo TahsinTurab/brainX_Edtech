@@ -6,5 +6,6 @@ namespace brainX.Areas.Student.Models
     {
         public IList<Content> ContentsList {  get; set; }
         public Course Course { get; set; }
+        public string TestResult { get; set; }
     }
 }

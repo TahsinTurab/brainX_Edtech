@@ -571,18 +571,15 @@ namespace brainX.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Solution1")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Solution2")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Solution3")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("StartingDate")
+                    b.Property<DateTime?>("StartingDate")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("StudentId")

@@ -1,4 +1,5 @@
 ﻿using brainX.Areas.Instructor.Models;
+using brainX.Areas.Student.Models;
 using brainX.Infrastructure.Domains;
 using brainX.Models;
 
@@ -21,6 +22,10 @@ namespace brainX.Repositories.Interface
         Task<IList<Course>> GetAllCourseOfStudentAsync(Guid id);
         Task<IList<Content>> GetAllContentsOfCourse(Guid id);
         Task<Course> GetCourseIdAsync(Guid id);
+        Task<Test> GetTestByIdAsync(Guid Id);
+        Task<Solution> GetSolutionAsync(Guid TestId, Guid StudentId);
+
+        Task<bool> CreateSolutionAsync(TakeTestModel takeTestModel);
 
     }
 }
