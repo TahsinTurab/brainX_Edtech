@@ -29,6 +29,7 @@ namespace brainX.Repositories.Interface
         Task<Test> GetTestByTestIdAsync(Guid Id);
         Task<Solution> GetSolutionByIdAsync(Guid Id);
         Task UpdateSolutionAsync(EvaluationModel model);
+        Task<Guid> CreateCourseAsync(AIModel model);
 
     }
 }

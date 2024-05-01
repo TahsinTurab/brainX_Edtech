@@ -8,5 +8,6 @@
         public string LearnTopic { get; set; }
         public string Dificulities { get; set; }
         public int Duration { get; set; }
+        public string Category {  get; set; }
     }
 }

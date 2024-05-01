@@ -38,6 +38,24 @@
                                         <input asp-for="CourseName" type="text" class="form-control" id="exampleInputText" placeholder="Course Name">
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <label class="col-sm-2 col-form-label" asp-for="Category">Select Category</label>
+                                    <select asp-for="Category" class="form-control" required>
+                                        
+                                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                        <option value="Computer Networks">Computer Networks</option>
+                                        <option value="Algorithms and Data Structures">Algorithms and Data Structures</option>
+                                        <option value="Cybersecurity">Cybersecurity</option>
+                                        <option value="Programming Languages">Programming Languages</option>
+                                        <option value="Mobile Application Development">Mobile Application Development</option>
+                                        <option value="Database Management Systems">Database Management Systems</option>
+                                        <option value="Software Engineering">Software Engineering</option>
+                                        
+                                    </select>
+                                    <span asp-validation-for="Category" class="text-danger"></span>
+                                </div>
+                                
+                               
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Topics you know</label>

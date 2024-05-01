@@ -9,7 +9,9 @@ using brainX.Repositories.Interface;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using System.Data.SqlTypes;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Net.WebRequestMethods;
 
 namespace brainX.Repositories.Implementation
 {
@@ -65,6 +67,79 @@ namespace brainX.Repositories.Implementation
             _dbContext.Update(instructor);
             await _dbContext.SaveChangesAsync();
             return course.Id.ToString();
+        }
+       
+        public async Task<Guid> CreateCourseAsync(AIModel model)
+        {
+            var course = new Course();
+            course.Id = Guid.NewGuid();
+            course.Duration = model.Duration * 7 * 1;
+            course.Description = "This course is generate by AI";
+            course.Difficulities = model.Dificulities;
+            course.Category = model.Category;
+            course.ThumbnailUrl = "ai_thumbnail.jpg";
+            course.Fee = 0;
+            course.Title = model.CourseName;
+            course.CreationDate = DateOnly.FromDateTime(DateTime.Today);
+            var instructorId = Guid.Parse("324afa1b-2680-4725-a436-50f836a19ff9");
+            var instructor = await _dbContext.Instructors.FirstOrDefaultAsync(e => e.Id == instructorId);
+
+            course.InstructorId = instructorId;
+            await _dbContext.Courses.AddAsync(course);
+            await _dbContext.SaveChangesAsync();
+            instructor.Courses.Add(course);
+            _dbContext.Update(instructor);
+            await _dbContext.SaveChangesAsync();
+
+            var contents = new List<Content>();
+            var dbTutorials = await _dbContext.Tutorials.ToListAsync();
+            var tempList = new List<Tutorial>();
+            string[] keyWords = model.LearnTopic.Split(',');
+
+            foreach(var keyWord in keyWords)
+            {
+                foreach (var tutorial in dbTutorials)
+                {
+                    if (model.CourseName.ToLower().Contains(tutorial.Course.ToLower()) && tutorial.Topic.ToLower().Contains(keyWord.ToLower()))
+                    {
+                        tempList.Add(tutorial);
+                        //break;
+                    }
+                }
+            }
+
+            int i = 1;
+            foreach(var tutorial in tempList)
+            {
+                var content = new Content();
+                content.Id = Guid.NewGuid();
+                content.ContentNo = i++;
+                content.ContentName = tutorial.Topic;
+                content.TutotialUrl = tutorial.Link;
+                if (content.TutotialUrl.Contains("youtube.com/watch?v="))
+                {
+                    string link = "https://www.youtube.com/embed/";
+                    bool flag = false;
+                    foreach(var c in content.TutotialUrl)
+                    {
+                        if (flag)
+                        {
+                            link += c;
+                        }
+                        if (c == '=') {
+                            flag = true;
+                        }
+
+                    }
+                    content.TutotialUrl = link;
+                }
+                content.CourseId = course.Id;
+                await _dbContext.Contents.AddAsync(content);
+                await _dbContext.SaveChangesAsync();
+            }
+
+            return course.Id;
+            
         }
 
         public async Task<ICollection<Course>> GetAllAsync()
@@ -412,6 +487,7 @@ namespace brainX.Repositories.Implementation
             await _dbContext.SaveChangesAsync();
 
         }
+
     }
 
 

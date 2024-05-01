@@ -598,3 +598,5 @@ C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX\obj\Debug\net8.0\brainX.genru
 C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX\obj\Debug\net8.0\ref\brainX.dll
 C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX\bin\Debug\net8.0\Azure.AI.OpenAI.dll
 C:\Users\tahsi\Desktop\brainX_Edtech\brainX\brainX\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\Tahsin Hasan Turab\Desktop\brainX_Edtech\brainX\brainX\bin\Debug\net8.0\Azure.AI.OpenAI.dll
+C:\Users\Tahsin Hasan Turab\Desktop\brainX_Edtech\brainX\brainX\bin\Debug\net8.0\System.ClientModel.dll

@@ -375,6 +375,9 @@ namespace brainX.Data.Migrations
                     b.Property<string>("NoteUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TutotialUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("VideoUrl")
                         .HasColumnType("nvarchar(max)");
 
@@ -446,6 +449,25 @@ namespace brainX.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Instructors");
+                });
+
+            modelBuilder.Entity("brainX.Infrastructure.Domains.Note", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notes");
                 });
 
             modelBuilder.Entity("brainX.Infrastructure.Domains.Notification", b =>
@@ -691,6 +713,29 @@ namespace brainX.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tests");
+                });
+
+            modelBuilder.Entity("brainX.Infrastructure.Domains.Tutorial", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Course")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Topic")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tutorials");
                 });
 
             modelBuilder.Entity("CourseStudent", b =>

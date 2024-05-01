@@ -73,8 +73,10 @@ namespace brainX.Areas.Student.Controllers
             model.Course = await _courseRepository.GetCourseIdAsync(courseId);
             model.ContentsList = await _courseRepository.GetAllContentsOfCourse(courseId);
             var test = await _courseRepository.GetTestByIdAsync(courseId);
-            var sol = await _courseRepository.GetSolutionAsync(test.Id, Guid.Parse(applicationUser.Id));
-            model.TestResult = sol.verdict;
+            if (test != null) { 
+                var sol = await _courseRepository.GetSolutionAsync(test.Id, Guid.Parse(applicationUser.Id));
+                model.TestResult = sol.verdict;
+            }   
             return View(model);
         }
 

@@ -1,6 +1,7 @@
 ﻿using Azure.AI.OpenAI;
 using brainX.Areas.Student.Models;
 using brainX.Data;
+using brainX.Infrastructure.Domains;
 using brainX.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -61,14 +62,8 @@ namespace brainX.Areas.Student.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(AIModel model)
         {
-            string apiKey = "sk-proj-9UB4zJ2Sj3cCzh308DexT3BlbkFJqqAKfgByuEM0rzr1scBg";
-            string prompt = "What is the meaning of life?";
-            int maxTokens = 50;
-            string AiModel = "gpt-3.5-turbo"; // Or any other model you prefer
-
-            string response = await GenerateResponse(apiKey, prompt, maxTokens, AiModel);
-
-            return null;
+            var courseId = await _courseRepository.CreateCourseAsync(model);
+            return RedirectToAction("Enroll", "Course", new { area = "", id = Guid.NewGuid() });
         }
     }
 }

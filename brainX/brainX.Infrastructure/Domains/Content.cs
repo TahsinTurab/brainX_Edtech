@@ -13,6 +13,7 @@ namespace brainX.Infrastructure.Domains
         public string? ContentName { get; set; }
         public string? NoteUrl { get; set; }
         public string? VideoUrl { get; set; }
+        public string? TutotialUrl { get; set; }
         public Course Course { get; set; }
         public Guid CourseId { get; set; }
     }

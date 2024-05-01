@@ -46,7 +46,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Instructor\Data\" />
-    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
 </Project>
