@@ -363,5 +363,56 @@ namespace brainX.Repositories.Implementation
             await _dbContext.SaveChangesAsync();
             return true;
         }
+
+        public async Task<List<Solution>> GetAllSolutionOfInstructor(Guid instructorId)
+        {
+            var dbSolutionList = await _dbContext.Solutions.ToListAsync();
+            dbSolutionList = dbSolutionList.OrderByDescending(obj => obj.EndingDate).ToList();
+            var tempList = new List<Solution>();
+            foreach(var sol in dbSolutionList)
+            {
+                if(sol.InstructorId == instructorId)
+                {
+                    bool isTake = true;
+                    for (int i = 0; i < tempList.Count; i++)
+                    {
+                        if (sol.TestId == tempList[i].TestId &&
+                            sol.StudentId == tempList[i].StudentId
+                            )
+                        {
+                            isTake = false;
+                            break;
+                        }
+                        
+                    }
+                    if(isTake) tempList.Add(sol);
+                }
+                
+            }
+            return tempList;
+        }
+
+        public async Task<Solution> GetSolutionByIdAsync(Guid Id)
+        {
+            var solution = await _dbContext.Solutions.FirstOrDefaultAsync(e => e.Id == Id);
+            return solution;
+        }
+
+        public async Task<Test> GetTestByTestIdAsync(Guid Id)
+        {
+            var test = await _dbContext.Tests.FirstOrDefaultAsync(e => e.Id == Id);
+            return test;
+        }
+
+        public async Task UpdateSolutionAsync(EvaluationModel model)
+        {
+            var solution = await _dbContext.Solutions.FirstOrDefaultAsync(e => e.Id == model.SolutionId);
+            solution.verdict = model.Verdict;
+            _dbContext.Update(solution);
+            await _dbContext.SaveChangesAsync();
+
+        }
     }
+
+
 }

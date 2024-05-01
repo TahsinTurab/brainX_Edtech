@@ -22,8 +22,22 @@
                         <small class="flex-fill text-center border-end py-2">@Model.Course.Difficulities</small>
                     </div>
                     <div class="card-footer">
-                        <h5>Test Result: @Model.TestResult</h5>
-                        @if(Model.TestResult != "Pending")
+                        
+                        <h5>Test Result: 
+                            @if (Model.TestResult == "Pending")
+                            {
+                                <span class="badge badge-warning">Pending</span>
+                            }
+                            else if(Model.TestResult == "Pass")
+                            {
+                                <span class="badge badge-success">Passed</span>
+                            }
+                            else if (Model.TestResult == "Fail")
+                            {
+                                <span class="badge badge-danger">Failed</span>
+                            }
+                        </h5>
+                        @if(Model.TestResult == "Fail")
                         {
                             <a class="btn btn-primary " asp-action="TakeTest" asp-controller="Course" asp-area="student" asp-route-id="@Model.Course.Id">
                                 Take Test

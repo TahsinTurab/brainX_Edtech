@@ -1,0 +1,100 @@
+﻿@model EvaluationModel
+@{
+    ViewData["Title"] = "Evaluate Submission";
+}
+<br />
+<br />
+<div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-6">
+            <h3>@ViewData["Title"]</h3>
+        </div>
+        <div class="col-6">
+        </div>
+    </div>
+</div>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">For All Courses</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-striped projects">
+                <thead>
+                    <tr>
+
+                        <th style="width: 25%">
+                            Test Id
+                        </th>
+                        <th style="width: 25%">
+                           Submission Date
+                        </th>
+                        <th style="width: 25%">
+                            Verdict
+                        </th>
+
+                        <th style="width: 25%" class="text-center">
+                            Action
+                        </th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var sol in Model.Solutions){
+                        <tr>
+                            <td>
+                                @sol.Id
+                            </td>
+                            <td>
+                                @sol.EndingDate
+                            </td>
+
+                            <td>
+                                @if(sol.verdict=="Pending"){
+                                    <span class="badge badge-warning">@sol.verdict</span>
+                                }
+                                @if(sol.verdict == "Pass"){
+                                    <span class="badge badge-success">@sol.verdict</span>
+                                }
+                                @if(sol.verdict == "Fail"){
+                                    <span class="badge badge-danger">@sol.verdict</span>
+                                }
+                                
+                            </td>
+                            <td class="project-actions">
+                                @if (sol.verdict == "Pending")
+                                {
+                                    <a class="btn btn-primary " asp-action="Remark" asp-controller="Course" asp-area="Instructor" asp-route-id="@sol.Id">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Evaluate
+                                    </a>
+                                }
+                                
+                            </td>
+                        </tr>
+                    }
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->

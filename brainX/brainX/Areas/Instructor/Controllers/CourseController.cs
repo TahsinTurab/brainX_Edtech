@@ -216,5 +216,33 @@ namespace brainX.Areas.Instructor.Controllers
         {
             return View();
         }
+
+        public async Task<IActionResult> Evaluate()
+        {
+            var applicationUser = await _userManager.GetUserAsync(HttpContext.User);
+
+            var solutions = await _courseRepository.GetAllSolutionOfInstructor(Guid.Parse(applicationUser.Id));
+            var model = new EvaluationModel();
+            model.Solutions = solutions;
+            return View(model);
+        }
+
+        public async Task<IActionResult> Remark(Guid id)
+        {
+            var model = new EvaluationModel();
+            var solution = await _courseRepository.GetSolutionByIdAsync(id);
+            var test = await _courseRepository.GetTestByTestIdAsync(solution.TestId);
+            model.Test = test;
+            model.Solution = solution;
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Remark(EvaluationModel model)
+        {
+            await _courseRepository.UpdateSolutionAsync(model);
+            return RedirectToAction("Evaluate");
+
+        }
     }
 }
