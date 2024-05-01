@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "LyMfFsJJ2xXeNSU4Oit0hQc/trlWUcaacf3YPVt7TNGk6HwqN/MLw0hpEZzrsDMXyWHIVbDBu5ISYd3OcmCSHg==",
+  "dgSpecHash": "NlGRjpEZuqvVuzHXhdyJlZn1mPzEieupfCqN24ij0ISjTQ9150l0apU5Yp8heWHlwJMIE/Ea4a9EpLb/B45Dgg==",
   "success": true,
   "projectFilePath": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\brainX.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tahsi\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
-    "C:\\Users\\tahsi\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
+    "C:\\Users\\tahsi\\.nuget\\packages\\azure.ai.openai\\1.0.0-beta.16\\azure.ai.openai.1.0.0-beta.16.nupkg.sha512",
+    "C:\\Users\\tahsi\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\tahsi\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\tahsi\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\tahsi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -167,6 +168,7 @@
     "C:\\Users\\tahsi\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.6\\sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\tahsi\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.6\\sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\tahsi\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
+    "C:\\Users\\tahsi\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\tahsi\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
     "C:\\Users\\tahsi\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\tahsi\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",

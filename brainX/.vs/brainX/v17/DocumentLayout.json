@@ -1,12 +1,122 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{73E7D630-DC52-4B80-8431-E8C362E03196}|brainX.Infrastructure\\brainX.Infrastructure.csproj|c:\\users\\tahsi\\desktop\\brainx_edtech\\brainx\\brainx.infrastructure\\domains\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73E7D630-DC52-4B80-8431-E8C362E03196}|brainX.Infrastructure\\brainX.Infrastructure.csproj|solutionrelative:brainx.infrastructure\\domains\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4937E977-FE9F-4C0F-9643-B6CD459674EC}|brainX\\brainX.csproj|c:\\users\\tahsi\\desktop\\brainx_edtech\\brainx\\brainx\\areas\\student\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4937E977-FE9F-4C0F-9643-B6CD459674EC}|brainX\\brainX.csproj|solutionrelative:brainx\\areas\\student\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4937E977-FE9F-4C0F-9643-B6CD459674EC}|brainX\\brainX.csproj|c:\\users\\tahsi\\desktop\\brainx_edtech\\brainx\\brainx\\areas\\instructor\\views\\course\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4937E977-FE9F-4C0F-9643-B6CD459674EC}|brainX\\brainX.csproj|solutionrelative:brainx\\areas\\instructor\\views\\course\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4937E977-FE9F-4C0F-9643-B6CD459674EC}|brainX\\brainX.csproj|c:\\users\\tahsi\\desktop\\brainx_edtech\\brainx\\brainx\\areas\\student\\views\\ai\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4937E977-FE9F-4C0F-9643-B6CD459674EC}|brainX\\brainX.csproj|solutionrelative:brainx\\areas\\student\\views\\ai\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4937E977-FE9F-4C0F-9643-B6CD459674EC}|brainX\\brainX.csproj|c:\\users\\tahsi\\desktop\\brainx_edtech\\brainx\\brainx\\areas\\student\\models\\aimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4937E977-FE9F-4C0F-9643-B6CD459674EC}|brainX\\brainX.csproj|solutionrelative:brainx\\areas\\student\\models\\aimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73E7D630-DC52-4B80-8431-E8C362E03196}|brainX.Infrastructure\\brainX.Infrastructure.csproj|c:\\users\\tahsi\\desktop\\brainx_edtech\\brainx\\brainx.infrastructure\\domains\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73E7D630-DC52-4B80-8431-E8C362E03196}|brainX.Infrastructure\\brainX.Infrastructure.csproj|solutionrelative:brainx.infrastructure\\domains\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Resource.cs",
+              "DocumentMoniker": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX.Infrastructure\\Domains\\Resource.cs",
+              "RelativeDocumentMoniker": "brainX.Infrastructure\\Domains\\Resource.cs",
+              "ToolTip": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX.Infrastructure\\Domains\\Resource.cs",
+              "RelativeToolTip": "brainX.Infrastructure\\Domains\\Resource.cs",
+              "ViewState": "AQIAAAQAAAAAMjMzMzMLwA8AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T15:23:39.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AIModel.cs",
+              "DocumentMoniker": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\Areas\\Student\\Models\\AIModel.cs",
+              "RelativeDocumentMoniker": "brainX\\Areas\\Student\\Models\\AIModel.cs",
+              "ToolTip": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\Areas\\Student\\Models\\AIModel.cs",
+              "RelativeToolTip": "brainX\\Areas\\Student\\Models\\AIModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T14:04:45.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\Areas\\Student\\Views\\AI\\Index.cshtml",
+              "RelativeDocumentMoniker": "brainX\\Areas\\Student\\Views\\AI\\Index.cshtml",
+              "ToolTip": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\Areas\\Student\\Views\\AI\\Index.cshtml",
+              "RelativeToolTip": "brainX\\Areas\\Student\\Views\\AI\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIQAAACYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-01T13:57:06.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AIController.cs",
+              "DocumentMoniker": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\Areas\\Student\\Controllers\\AIController.cs",
+              "RelativeDocumentMoniker": "brainX\\Areas\\Student\\Controllers\\AIController.cs",
+              "ToolTip": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\Areas\\Student\\Controllers\\AIController.cs",
+              "RelativeToolTip": "brainX\\Areas\\Student\\Controllers\\AIController.cs",
+              "ViewState": "AQIAACsAAAAAmpmZmZkswDUAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T13:55:52.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\Areas\\Instructor\\Views\\Course\\Create.cshtml",
+              "RelativeDocumentMoniker": "brainX\\Areas\\Instructor\\Views\\Course\\Create.cshtml",
+              "ToolTip": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX\\Areas\\Instructor\\Views\\Course\\Create.cshtml",
+              "RelativeToolTip": "brainX\\Areas\\Instructor\\Views\\Course\\Create.cshtml",
+              "ViewState": "AQIAABoAAACALjMzMzMbwGMAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-01T14:12:19.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX.Infrastructure\\Domains\\Course.cs",
+              "RelativeDocumentMoniker": "brainX.Infrastructure\\Domains\\Course.cs",
+              "ToolTip": "C:\\Users\\tahsi\\Desktop\\brainX_Edtech\\brainX\\brainX.Infrastructure\\Domains\\Course.cs",
+              "RelativeToolTip": "brainX.Infrastructure\\Domains\\Course.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T13:52:36.132Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -25,5 +25,6 @@ namespace brainX.Data
         public DbSet<Test> Tests { get; set; }
         public DbSet<Quiz> Quizes { get; set; }
         public DbSet<Solution> Solutions { get; set; }
+        public DbSet<Resource> Resources { get; set; }
     }
 }
