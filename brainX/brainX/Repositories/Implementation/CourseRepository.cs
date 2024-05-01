@@ -302,5 +302,25 @@ namespace brainX.Repositories.Implementation
             return courseDetails;
         }
 
+        public async Task<bool> CreateQuestionAsync(TestCreateModel testCreateModel, Guid authorId)
+        {
+            if (testCreateModel == null)
+            {
+                return false;
+            }
+            var test = new Test();
+            test.Id = Guid.NewGuid();
+            test.AuthorId = authorId;
+            test.CourseId = testCreateModel.CourseId;
+            test.Name = testCreateModel.Name;
+            test.TotalTime = testCreateModel.TotalTime;
+            test.PracticalTask1 = testCreateModel.PracticalTask1;
+            test.PracticalTask2 = testCreateModel.PracticalTask2;
+            test.PracticalTask3 = testCreateModel.PracticalTask3;
+            
+            await _dbContext.Tests.AddAsync(test);
+            await _dbContext.SaveChangesAsync();
+            return true;
+        }
     }
 }

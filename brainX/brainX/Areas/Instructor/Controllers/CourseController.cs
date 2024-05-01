@@ -200,7 +200,16 @@ namespace brainX.Areas.Instructor.Controllers
         [HttpPost]
         public async Task<IActionResult> SetTest(TestCreateModel testCreateModel)
         {
-            return View();
+            var applicationUser = await _userManager.GetUserAsync(HttpContext.User);
+            var result = await _courseRepository.CreateQuestionAsync(testCreateModel,Guid.Parse(applicationUser.Id));
+            var status = "Can't create test";
+            if (result == true)
+            {
+                status = "Test created successfully";
+            }
+            return RedirectToAction("Update", new { Id = testCreateModel.CourseId, message = status });
+        
+
         }
 
         public async Task<IActionResult> Delete(Guid Id)

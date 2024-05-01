@@ -11,9 +11,10 @@ namespace brainX.Infrastructure.Domains
         public Guid Id { get; set; }
         public string Name { get; set; }
         public int TotalTime { get; set; }
-        public int QuizTime { get; set; }
-        public IList<Quiz> Quizes { get; set; }
-        public string PracticalTask { get; set; }
+        public string? PracticalTask1 { get; set; }
+        public string? PracticalTask2 { get; set; }
+        public string? PracticalTask3 { get; set; }
         public Guid CourseId { get; set; }
+        public Guid AuthorId { get; set; }
     }
 }

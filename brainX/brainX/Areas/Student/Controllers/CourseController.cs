@@ -71,5 +71,11 @@ namespace brainX.Areas.Student.Controllers
             model.ContentsList = await _courseRepository.GetAllContentsOfCourse(courseId);
             return View(model);
         }
+
+        public async Task<IActionResult> TakeTest(Guid courseId)
+        {
+            var model = new TakeTestModel();
+            return View(model);
+        }
     }
 }

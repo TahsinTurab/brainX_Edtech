@@ -504,8 +504,6 @@ namespace brainX.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TestId");
-
                     b.ToTable("Quizes");
                 });
 
@@ -557,6 +555,51 @@ namespace brainX.Data.Migrations
                     b.ToTable("Reviews");
                 });
 
+            modelBuilder.Entity("brainX.Infrastructure.Domains.Solution", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Attemp")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndingDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("InstructorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Solution1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Solution2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Solution3")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartingDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TestId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("verdict")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Solutions");
+                });
+
             modelBuilder.Entity("brainX.Infrastructure.Domains.Student", b =>
                 {
                     b.Property<Guid>("Id")
@@ -595,6 +638,9 @@ namespace brainX.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("AuthorId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
 
@@ -602,12 +648,14 @@ namespace brainX.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PracticalTask")
-                        .IsRequired()
+                    b.Property<string>("PracticalTask1")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("QuizTime")
-                        .HasColumnType("int");
+                    b.Property<string>("PracticalTask2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PracticalTask3")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TotalTime")
                         .HasColumnType("int");
@@ -716,15 +764,6 @@ namespace brainX.Data.Migrations
                     b.Navigation("Instructor");
                 });
 
-            modelBuilder.Entity("brainX.Infrastructure.Domains.Quiz", b =>
-                {
-                    b.HasOne("brainX.Infrastructure.Domains.Test", null)
-                        .WithMany("Quizes")
-                        .HasForeignKey("TestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("brainX.Infrastructure.Domains.Review", b =>
                 {
                     b.HasOne("brainX.Infrastructure.Domains.Course", "Course")
@@ -757,11 +796,6 @@ namespace brainX.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Courses");
-                });
-
-            modelBuilder.Entity("brainX.Infrastructure.Domains.Test", b =>
-                {
-                    b.Navigation("Quizes");
                 });
 #pragma warning restore 612, 618
         }

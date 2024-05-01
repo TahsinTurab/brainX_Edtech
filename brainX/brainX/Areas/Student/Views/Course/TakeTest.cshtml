@@ -1,0 +1,77 @@
+﻿@model TakeTestModel
+@{
+    ViewData["Title"] = "Take Test";
+}
+
+<div class="content-wrapper">
+    <div class="container">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>brainX Certification Test</h1>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <section class="content">
+            <form method="post" asp-antiforgery="true" asp-action="TakeTest" asp-controller="Course" asp-area="Student" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-outline card-info">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    Problem Statement 01
+                                    <p>@Model.Test.PracticalTask01</p>
+                                </h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <textarea asp-for="Solution1" id="inputMessage" class="form-control" rows="8"></textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-outline card-info">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    Problem Statement 02
+                                    <p>@Model.Test.PracticalTask02</p>
+                                </h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <textarea asp-for="Solution2" id="inputMessage" class="form-control" rows="8"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-outline card-info">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    Problem Statement 03
+                                </h3>
+                                <p>@Model.Test.PracticalTask03</p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <textarea asp-for="Solution2" id="inputMessage" class="form-control" rows="8"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
