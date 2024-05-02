@@ -52,7 +52,8 @@ namespace brainX.Controllers
             {
                 statusMessage = "Your question has been posted successfully";
             }
-            return RedirectToAction("Index", new {status = statusMessage});
+            if(isAnonymous)return RedirectToAction("Index", new {status = statusMessage});
+            return RedirectToAction("Index", "Profile", new { status = statusMessage });
         }
 
 

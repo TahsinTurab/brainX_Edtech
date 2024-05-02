@@ -5,273 +5,175 @@
 <br>
 <br>
 <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-5">
+        <div class="row">
+            <div class="col-md-5">
         
-                    <!-- Profile Image -->
-                    <div class="card card-primary card-outline">
-                      <div class="card-body box-profile">
-                        <div class="text-center">
-                          <img class="profile-user-img img-fluid img-circle"
-                               src="/uploads/img/@Model.ImageUrl"
-                               alt="User profile picture">
-                        </div>
-        
-                        <h3 class="profile-username text-center">@Model.Name</h3>
-                        <ul class="list-group list-group-unbordered mb-3">
-                          <li class="list-group-item">
-                            <b>Enrolled Courses</b> <a class="float-right">10</a>
-                          </li>
-                          <li class="list-group-item">
-                            <b>Passed Courses</b> <a class="float-right">5</a>
-                          </li>
-                          <li class="list-group-item">
-                            <b>Ongoing</b> <a class="float-right">5</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-        
-                    <!-- About Me Box -->
-                    <div class="card card-primary">
-                      <div class="card-header">
-                        <h3 class="card-title">About Me </h3>
-                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="float-right"><i class="fas fa-edit"></i></a>
-                      </div>
-                      <!-- /.card-header -->
-                      <div class="card-body">
-                        <strong><i class="fas fa-user mr-1"></i> User Name</strong>
-        
-                        <p class="text-muted">
-                          @Model.UserName
-                        </p>
-        
-                        <hr>
-        
-                        <strong><i class="fas fa-envelope mr-1"></i> Location</strong>
-        
-                        <p class="text-muted">@Model.Email</p>
-        
-                        <hr>
-        
-                        <strong><i class="fas fa-phone-alt mr-1"></i> Phone Number</strong>
-                           
-                        @if(Model.PhoneNumber==null){
-                            <p class="text-muted"> N/A </p>
-                        }
-                        else{
-                            <p class="text-muted"> @Model.PhoneNumber </p>
-                        }
-                       
-                        </div>
-                      <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-md-7">
-                    <div class="card card-outline card-info">
-                      <div class="card-header">
-                        <h3 class="card-title">
-                          What's on yout mind?
-                        </h3>
-                      </div>
-                      <!-- /.card-header -->
-                      <div class="card-body">
-                          <textarea id="inputMessage" class="form-control" rows="4"></textarea>
-                      </div>
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Post</button>
-                      </div>
-                    </div>
-                    
-                    <div class="card">
-                    
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <table id="example2" class="table table-bordered table-hover">
-                        
-                        <tbody>
-                        <tr>
-                            <!-- Post -->
-                            <div class="post">
-                                <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="assets/img/user1-128x128.jpg" alt="user image">
-                                <span class="username">
-                                    <a href="#">Jonathan Burke Jr.</a>
-                                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                </span>
-                                <span class="description">Shared publicly - 7:30 PM today</span>
-                                </div>
-                                <!-- /.user-block -->
-                                <p>
-                                Lorem ipsum represents a long-held tradition for designers,
-                                typographers and the like. Some people hate it and argue for
-                                its demise, but others ignore the hate as they create awesome
-                                tools to help create filler text for everyone from bacon lovers
-                                to Charlie Sheen fans.
-                                </p>
-        
-                                <p>
-                                <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                                <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                                <span class="float-right">
-                                    <a href="#" class="link-black text-sm">
-                                    <i class="far fa-comments mr-1"></i> Comments (5)
-                                    </a>
-                                </span>
-                                </p>
-        
-                                <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                            </div>
-                            <!-- /.post -->
-                        </tr>
-                        <tr>
-                            <!-- Post -->
-                            <div class="post">
-                                <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="assets/img/user6-128x128.jpg" alt="User Image">
-                                <span class="username">
-                                    <a href="#">Adam Jones</a>
-                                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                </span>
-                                <span class="description">Posted 5 photos - 5 days ago</span>
-                                </div>
-                                <!-- /.user-block -->
-                                <div class="row mb-3">
-                                <div class="col-sm-6">
-                                    <img class="img-fluid" src="assets/img/photo1.png" alt="Photo">
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-sm-6">
-                                    <div class="row">
-                                    <div class="col-sm-6">
-                                        <img class="img-fluid mb-3" src="assets/img/photo2.png" alt="Photo">
-                                        <img class="img-fluid" src="assets/img/photo3.jpg" alt="Photo">
-                                    </div>
-                                    <!-- /.col -->
-                                    <div class="col-sm-6">
-                                        <img class="img-fluid mb-3" src="assets/img/photo4.jpg" alt="Photo">
-                                        <img class="img-fluid" src="assets/img/photo1.png" alt="Photo">
-                                    </div>
-                                    <!-- /.col -->
-                                    </div>
-                                    <!-- /.row -->
-                                </div>
-                                <!-- /.col -->
-                                </div>
-                                <!-- /.row -->
-        
-                                <p>
-                                <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                                <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                                <span class="float-right">
-                                    <a href="#" class="link-black text-sm">
-                                    <i class="far fa-comments mr-1"></i> Comments (5)
-                                    </a>
-                                </span>
-                                </p>
-        
-                                <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                            </div>
-                            <!-- /.post -->
-                        </tr>
-                        <tr>
-                            <!-- Post -->
-                            <div class="post">
-                                <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="assets/img/user1-128x128.jpg" alt="user image">
-                                <span class="username">
-                                    <a href="#">Jonathan Burke Jr.</a>
-                                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                </span>
-                                <span class="description">Shared publicly - 7:30 PM today</span>
-                                </div>
-                                <!-- /.user-block -->
-                                <p>
-                                Lorem ipsum represents a long-held tradition for designers,
-                                typographers and the like. Some people hate it and argue for
-                                its demise, but others ignore the hate as they create awesome
-                                tools to help create filler text for everyone from bacon lovers
-                                to Charlie Sheen fans.
-                                </p>
-        
-                                <p>
-                                <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                                <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                                <span class="float-right">
-                                    <a href="#" class="link-black text-sm">
-                                    <i class="far fa-comments mr-1"></i> Comments (5)
-                                    </a>
-                                </span>
-                                </p>
-        
-                                <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                            </div>
-                            <!-- /.post -->
-                        </tr>
-                        <tr>
-                            <!-- Post -->
-                            <div class="post">
-                                <div class="user-block">
-                                <img class="img-circle img-bordered-sm" src="assets/img/user6-128x128.jpg" alt="User Image">
-                                <span class="username">
-                                    <a href="#">Adam Jones</a>
-                                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                </span>
-                                <span class="description">Posted 5 photos - 5 days ago</span>
-                                </div>
-                                <!-- /.user-block -->
-                                <div class="row mb-3">
-                                <div class="col-sm-6">
-                                    <img class="img-fluid" src="assets/img/photo1.png" alt="Photo">
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-sm-6">
-                                    <div class="row">
-                                    <div class="col-sm-6">
-                                        <img class="img-fluid mb-3" src="assets/img/photo2.png" alt="Photo">
-                                        <img class="img-fluid" src="assets/img/photo3.jpg" alt="Photo">
-                                    </div>
-                                    <!-- /.col -->
-                                    <div class="col-sm-6">
-                                        <img class="img-fluid mb-3" src="assets/img/photo4.jpg" alt="Photo">
-                                        <img class="img-fluid" src="assets/img/photo1.png" alt="Photo">
-                                    </div>
-                                    <!-- /.col -->
-                                    </div>
-                                    <!-- /.row -->
-                                </div>
-                                <!-- /.col -->
-                                </div>
-                                <!-- /.row -->
-        
-                                <p>
-                                <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                                <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                                <span class="float-right">
-                                    <a href="#" class="link-black text-sm">
-                                    <i class="far fa-comments mr-1"></i> Comments (5)
-                                    </a>
-                                </span>
-                                </p>
-        
-                                <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                            </div>
-                            <!-- /.post -->
-                        </tr>
-                        
-                        
-                        </tfoot>
-                        </table>
-                    </div>
-                    <!-- /.card-body -->
-                    </div>
-                  </div>
-
-                  <!-- /.col -->
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+                <div class="card-body box-profile">
+                <div class="text-center">
+                    <img class="profile-user-img img-fluid img-circle"
+                        src="/uploads/img/@Model.ImageUrl"
+                        alt="User profile picture">
                 </div>
+        
+                <h3 class="profile-username text-center">@Model.Name</h3>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        
+            <!-- About Me Box -->
+            <div class="card card-primary">
+                <div class="card-header">
+                <h3 class="card-title">About Me </h3>
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="float-right"><i class="fas fa-edit"></i></a>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                <strong><i class="fas fa-user mr-1"></i> User Name</strong>
+        
+                <p class="text-muted">
+                    @Model.UserName
+                </p>
+        
+                <hr>
+        
+                <strong><i class="fas fa-envelope mr-1"></i> Location</strong>
+        
+                <p class="text-muted">@Model.Email</p>
+        
+                <hr>
+        
+                <strong><i class="fas fa-phone-alt mr-1"></i> Phone Number</strong>
+                           
+                @if(Model.PhoneNumber==null){
+                    <p class="text-muted"> N/A </p>
+                }
+                else{
+                    <p class="text-muted"> @Model.PhoneNumber </p>
+                }
+                       
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-7">
+            @if (!String.IsNullOrEmpty(ViewBag.Status))
+            {
+                <div class="alert alert-success" role="alert">
+                    <p>@ViewBag.Status</p>
+                </div>
+            }
+                    
+
+    <!-- Main content -->
+                <section class="content">
+        <div class="container-fluid">
+                    
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-outline card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                What's on your mind?
+                            </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                        <form method="post" asp-antiforgery="true" asp-action="CreateQuestion" asp-controller="Community" asp-area="" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card card-outline card-info">
+                                        <div class="card-header">
+                                            <h3 class="card-title">
+                                                What's on your mind?
+                                            </h3>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+                                            <input type="text" class="form-control" asp-for="Title" placeholder="Title (required)" required>
+                                            <br /><textarea asp-for="Description" id="inputMessage" class="form-control" rows="4"></textarea>
+                                            <br /><input asp-for="Image" />
+                                        </div>
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-primary">Post</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+                    
+            <!-- ./row -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
+
+                                <tbody>
+                                    @foreach (var question in Model.communityQuestions)
+                                    {
+                                        <tr>
+                                            <!-- Post -->
+                                            <div class="post">
+                                                <div class="user-block">
+                                                    <img class="img-circle img-bordered-sm" src="/uploads/img/@question.UserPhotoUrl" alt="User Image">
+                                                    <span class="username">
+                                                        <a href="#">@question.UserName</a>
+                                                        <a href="#" class="float-right btn-tool"><i class="fas fa-times"> @question.DateTime</i></a>
+                                                    </span>
+                                                    <span class="description">
+                                                        <b>@question.Title</b><br />
+                                                        @question.Details
+                                                    </span>
+                                                </div>
+                                                <!-- /.user-block -->
+                                                @if (question.ImageUrl != null)
+                                                {
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-12">
+                                                            <img class="img-fluid" src="/uploads/img/@question.ImageUrl" alt="Photo">
+                                                        </div>
+                                                    </div>
+                                                }
+
+                                                <!-- /.row -->
+
+                                                <p>
+                                                    <a asp-area="" asp-controller="Community" asp-action="Answers" asp-route-id="@question.Id" class="link-black text-sm mr-2"><i class="fas fa-comments mr-1"></i> See Answers</a>
+                                                </p>
+                                            </div>
+                                            <!-- /.post -->
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+            </div>
+
+            <!-- /.col -->
+        </div>
                 <!-- /.row -->
-        </div><!-- /.container-fluid -->
+</div><!-- /.container-fluid -->
