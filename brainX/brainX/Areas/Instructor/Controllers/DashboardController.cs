@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Shared;
 
 namespace brainX.Areas.Instructor.Controllers
 {
@@ -25,8 +26,9 @@ namespace brainX.Areas.Instructor.Controllers
 
        
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string message=null)
         {
+            ViewBag.Status = message;
             var model = new DashboardModel();
             var accounts = await _dbContext.Accounts.ToListAsync();
             var applicationUser = await _userManager.GetUserAsync(HttpContext.User);
@@ -50,6 +52,35 @@ namespace brainX.Areas.Instructor.Controllers
                 model.TotalEarning = (double)acount.TotalRevenue;
             }
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Withdraw(DashboardModel model)
+        {
+            var accounts = await _dbContext.Accounts.ToListAsync();
+            var applicationUser = await _userManager.GetUserAsync(HttpContext.User);
+            var acount = new Account();
+            string message = "Your withdraw request is successfull!";
+
+            foreach (var account in accounts)
+            {
+                if (account.InstructorId == Guid.Parse(applicationUser.Id))
+                {
+                    acount = account;
+                    break;
+                }
+            }
+            if (acount == null || acount.CurrentBalance<model.TransferAmount) 
+            {
+                message = "Your don't have enough banlance to withdraw!";
+            }
+            else
+            {
+                acount.CurrentBalance -= model.TransferAmount;
+                _dbContext.Update(acount);
+                await _dbContext.SaveChangesAsync();
+            }
+            return RedirectToAction("Index", new { message = message });
         }
     }
 }
