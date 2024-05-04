@@ -81,7 +81,7 @@ namespace brainX.Repositories.Implementation
             course.Fee = 0;
             course.Title = model.CourseName;
             course.CreationDate = DateOnly.FromDateTime(DateTime.Today);
-            var instructorId = Guid.Parse("324afa1b-2680-4725-a436-50f836a19ff9");
+            var instructorId = Guid.Parse("e1395a6f-264e-4b52-9412-65a28b2ca888");
             var instructor = await _dbContext.Instructors.FirstOrDefaultAsync(e => e.Id == instructorId);
 
             course.InstructorId = instructorId;

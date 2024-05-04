@@ -75,7 +75,8 @@ namespace brainX.Areas.Student.Controllers
             var test = await _courseRepository.GetTestByIdAsync(courseId);
             if (test != null) { 
                 var sol = await _courseRepository.GetSolutionAsync(test.Id, Guid.Parse(applicationUser.Id));
-                model.TestResult = sol.verdict;
+                if (sol != null) model.TestResult = sol.verdict;
+                else model.TestResult = "No Attempt";
             }   
             return View(model);
         }

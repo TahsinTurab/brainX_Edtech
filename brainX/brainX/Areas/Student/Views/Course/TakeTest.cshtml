@@ -2,6 +2,34 @@
 @{
     ViewData["Title"] = "Take Test";
 }
+<head>
+    <style>
+        h3.question {
+            font-family: "Roboto", sans-serif;
+            font-size: 24px;
+            text-align: center;
+            font-weight: 100;
+        }
+
+        .editor-container {
+            width: 100%;
+            height: 540px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        #editor {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            font-size: 20px;
+        }
+    </style>
+</head>
 
 <div class="content-wrapper">
     <div class="container">
@@ -51,9 +79,9 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <ul>
-                                    <li> Attemp No: @Model.Attemp</li>
-                                    <li> You will get total 3 attemp for the first time.</li>
-                                    <li> If you won't get passed, you will take the test after 30 days.</li>
+                                    <li> Attempt No: @Model.Attemp</li>
+                                    <li> You will get total 3 attempt for the first time.</li>
+                                    <li> If you won't get passed in 3 attempt, you can take the test after 30 days.</li>
                                     <li> Don't close this tab, if you close is your solution will be submitted as null.</li>
                                     <li> You will get total @Model.Test.TotalTime mins to submit your solution</li>
                                     Good Luck!
@@ -93,7 +121,10 @@
                                             </div>
                                             <!-- /.card-header -->
                                             <div class="card-body">
-                                                <textarea asp-for="Solution1" id="inputMessage" class="form-control" rows="8"></textarea>
+                                                <div class="editor-container">
+                                                    <div id="editor">// Program to reverse a string</div>
+                                                </div>
+                                                <textarea asp-for="Solution1" id="editor" class="form-control" rows="8"></textarea>
                                             </div>
 
                                         </div>
@@ -183,5 +214,14 @@
                 }
             }, 1000);
         }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
+    <script>
+        let editor = document.querySelector("#editor");
+
+        ace.edit(editor, {
+            theme: "ace/theme/cobalt",
+            mode: "ace/mode/javascript",
+        });
     </script>
 }
